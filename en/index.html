@@ -171,6 +171,10 @@ a.ph:hover img,.card:hover .ph img{transform:scale(1.04)}
 .book .steps{list-style:none;counter-reset:s;margin-top:10px}
 .book .steps li{counter-increment:s;display:flex;gap:16px;margin-bottom:18px;font-size:.92rem;color:#E3DDD2}
 .book .steps li::before{content:counter(s);flex:none;width:30px;height:30px;border:1px solid var(--bronze);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.05rem;color:var(--bronze)}
+.book .sat{display:flex;gap:14px;align-items:center;margin-top:26px;padding:14px 18px;border:1px solid rgba(178,138,90,.5);background:rgba(178,138,90,.08);font-size:.9rem;color:#F1EBE0}
+.book .sat svg{width:26px;height:26px;flex:none;stroke:var(--bronze);fill:none;stroke-width:1.5}
+.book .sat strong{color:#E9D6B8;font-weight:600}
+select:disabled{color:var(--taupe);background:#F3EFE7;cursor:not-allowed}
 .book .mail{margin-top:28px;font-size:.88rem;color:#D9D2C5}
 .book .mail a{color:var(--white)}
 form{background:var(--ivory);color:var(--ink);padding:40px}
@@ -271,6 +275,7 @@ body.lb-open{overflow:hidden}
   <symbol id="i-bread" viewBox="0 0 32 32"><path d="M6 22c-3-3-2-8 3-11s12-6 16-3 3 9-2 12-14 5-17 2Z"/><path d="m11 13 3 5M16 10.5l3 5M21 8.5l2.5 4.5"/></symbol>
   <symbol id="i-shop" viewBox="0 0 32 32"><path d="M5 12 7 5h18l2 7M5 12v15h22V12M5 12c0 2 1.5 3 3.5 3s3.5-1 3.5-3c0 2 1.5 3 4 3s4-1 4-3c0 2 1.5 3 3.5 3S27 14 27 12"/><path d="M13 27v-7h6v7"/></symbol>
   <symbol id="i-boot" viewBox="0 0 32 32"><path d="M10 4h8v11l7 4c2 1 3 3 3 5v2H8V8"/><path d="M8 22h20"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 32 32"><rect x="4" y="7" width="24" height="21" rx="2"/><path d="M4 13h24M10 4v6M22 4v6"/><path d="m12 20 3 3 6-6"/></symbol>
   <symbol id="i-check" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9"/></symbol>
 </svg>
 
@@ -493,6 +498,7 @@ body.lb-open{overflow:hidden}
         <li>We confirm availability and the rate for your dates.</li>
         <li>You finalise the booking — and all that's left is to get your skis ready.</li>
       </ol>
+      <p class="sat"><svg><use href="#i-cal"/></svg><span>Saturday-to-Saturday stays: arrivals and departures are on <strong>Saturdays only</strong>.</span></p>
       <p class="mail">Prefer to write to us directly?<br><a id="mailLink" href="mailto:laplagnecassiopee310@gmail.com">laplagnecassiopee310@gmail.com</a></p>
     </div>
 
@@ -507,8 +513,8 @@ body.lb-open{overflow:hidden}
         <div class="field"><label for="tel">Phone <span class="opt">(optional)</span></label><input id="tel" name="Téléphone" type="tel" autocomplete="tel"></div>
       </div>
       <div class="row">
-        <div class="field"><label for="arrivee">Arrival</label><input id="arrivee" name="Arrivée" type="date" required></div>
-        <div class="field"><label for="depart">Departure</label><input id="depart" name="Départ" type="date" required></div>
+        <div class="field"><label for="arrivee">Arrival <span class="opt">(Saturday)</span></label><select id="arrivee" name="Arrivée" required><option value="">Choose a Saturday</option></select></div>
+        <div class="field"><label for="depart">Departure <span class="opt">(Saturday)</span></label><select id="depart" name="Départ" required></select></div>
       </div>
       <div class="row">
         <div class="field"><label for="adultes">Adults</label>
@@ -650,16 +656,31 @@ addEventListener('scroll', onScroll, {passive:true}); onScroll();
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }), {threshold:.12});
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-// Dates: min today, depart after arrivee
+// Dates: stays run Saturday to Saturday only
+const DATE_LOCALE = 'en-GB', WEEKS_MAX = 4, SATURDAYS_AHEAD = 52;
+const T = { pick: 'Choose a Saturday', pickArrFirst: 'Choose your arrival first', weeks: n => n + (n > 1 ? ' weeks' : ' week') };
 const arr = document.getElementById('arrivee'), dep = document.getElementById('depart');
-const today = new Date().toISOString().slice(0,10);
-arr.min = today; dep.min = today;
-arr.addEventListener('change', () => {
-  if (!arr.value) return;
-  const d = new Date(arr.value); d.setDate(d.getDate() + 1);
-  dep.min = d.toISOString().slice(0,10);
-  if (!dep.value || dep.value <= arr.value){ const w = new Date(arr.value); w.setDate(w.getDate() + 7); dep.value = w.toISOString().slice(0,10); }
-});
+const iso = d => d.toISOString().slice(0,10);
+const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
+const longDate = d => cap(d.toLocaleDateString(DATE_LOCALE, {day:'numeric', month:'long', year:'numeric', timeZone:'UTC'}));
+const shortDate = d => cap(d.toLocaleDateString(DATE_LOCALE, {day:'numeric', month:'long', timeZone:'UTC'}));
+const addDays = (d, n) => { const x = new Date(d); x.setUTCDate(x.getUTCDate() + n); return x; };
+(function fillArrivals(){
+  const now = new Date();
+  let first = new Date(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate() + 1));
+  first = addDays(first, (6 - first.getUTCDay() + 7) % 7);           // next Saturday (from tomorrow)
+  arr.innerHTML = ''; arr.add(new Option(T.pick, ''));
+  for (let i = 0; i < SATURDAYS_AHEAD; i++){ const d = addDays(first, 7 * i); arr.add(new Option(longDate(d), iso(d))); }
+})();
+function fillDepartures(){
+  const prev = dep.value; dep.innerHTML = '';
+  if (!arr.value){ dep.add(new Option(T.pickArrFirst, '')); dep.disabled = true; return; }
+  dep.disabled = false;
+  const a = new Date(arr.value + 'T00:00:00Z');
+  for (let w = 1; w <= WEEKS_MAX; w++){ const d = addDays(a, 7 * w); dep.add(new Option(`${shortDate(d)} · ${T.weeks(w)}`, iso(d))); }
+  if ([...dep.options].some(o => o.value === prev)) dep.value = prev;
+}
+arr.addEventListener('change', fillDepartures); fillDepartures();
 
 // Submit via FormSubmit (AJAX)
 const form = document.getElementById('bookForm'), msg = document.getElementById('formMsg'), btn = document.getElementById('submitBtn');
@@ -673,8 +694,8 @@ form.addEventListener('submit', async e => {
   const data = Object.fromEntries(new FormData(form));
   if (data._honey) return;
   const nuits = Math.round((new Date(dep.value) - new Date(arr.value)) / 864e5);
-  const fmt = s => new Date(s).toLocaleDateString('fr-FR', {day:'numeric', month:'long', year:'numeric'});
-  const fmtEn = s => new Date(s).toLocaleDateString('en-GB', {day:'numeric', month:'long', year:'numeric'});
+  const fmt = s => new Date(s).toLocaleDateString('fr-FR', {day:'numeric', month:'long', year:'numeric', timeZone:'UTC'});
+  const fmtEn = s => new Date(s).toLocaleDateString('en-GB', {day:'numeric', month:'long', year:'numeric', timeZone:'UTC'});
   const payload = {
     _subject: `Demande de réservation Cassiopée [EN] — ${fmt(arr.value)} → ${fmt(dep.value)} (${data['Prénom']} ${data['Nom']})`,
     _template: 'table', _captcha: 'false', _replyto: data.email,
