@@ -7,7 +7,15 @@
 <meta name="description" content="Appartement rénové de 65 m² à Belle Plagne (2050 m) : 6 personnes, 2 chambres, 2 salles d'eau, sauna privatif, 3 balcons, parking couvert, à 20 m des pistes. Demandez vos dates.">
 <meta property="og:title" content="Cassiopée · Votre cocon alpin à Belle Plagne">
 <meta property="og:description" content="65 m², 6 personnes, sauna privatif, à 20 m des pistes. Demandez vos dates.">
-<meta property="og:image" content="photos/01-salon-1.jpg">
+<link rel="canonical" href="https://cocon-alpin.com/">
+<meta property="og:url" content="https://cocon-alpin.com/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:image" content="https://cocon-alpin.com/photos/01-salon-1.jpg">
+<link rel="alternate" hreflang="fr" href="https://cocon-alpin.com/">
+<link rel="alternate" hreflang="en" href="https://cocon-alpin.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://cocon-alpin.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&family=Satisfy&display=swap" rel="stylesheet">
@@ -69,7 +77,7 @@ a.ph:hover img,.card:hover .ph img{transform:scale(1.04)}
 .nav ul a:hover{opacity:1;color:var(--bronze)}
 .nav .btn{padding:11px 20px;font-size:.68rem}
 .nav.solid{background:rgba(23,44,60,.97);box-shadow:0 1px 0 rgba(255,255,255,.06)}
-@media (max-width:860px){.nav ul li:not(:last-child){display:none}}
+@media (max-width:860px){.nav ul li:not(:last-child):not(.lang){display:none}}
 @media (max-width:520px){.brand b{font-size:1.05rem}.nav .btn{padding:9px 12px;font-size:.6rem;letter-spacing:.14em}.facts li{font-size:.82rem}.facts .sub{letter-spacing:.16em}.facts .sub{font-size:0}.facts .sub span{font-size:.66rem}.hero-inner{padding-bottom:130px}}
 
 /* Hero */
@@ -233,6 +241,14 @@ body.lb-open{overflow:hidden}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .9s ease,transform .9s ease}
 .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
+
+/* Language switcher */
+.nav .lang{display:flex;align-items:center;gap:7px;font-size:.72rem;letter-spacing:.2em;color:rgba(255,255,255,.45)}
+.nav .lang a{text-decoration:none;opacity:.6;padding:4px 0;border-bottom:1px solid transparent}
+.nav .lang a:hover{opacity:1;color:var(--white)}
+.nav .lang a[aria-current]{opacity:1;color:var(--white);border-bottom-color:var(--bronze)}
+@media (max-width:520px){.nav .wrap{padding:0 16px;gap:12px}.brand svg{display:none}.nav ul{gap:12px}.nav .lang{font-size:.64rem;letter-spacing:.14em;gap:5px}.nav .btn{white-space:nowrap}}
+@media (max-width:380px){.nav .btn{padding:9px 9px;letter-spacing:.08em}.nav ul{gap:10px}.brand b{font-size:.98rem}}
 </style>
 </head>
 <body>
@@ -270,6 +286,7 @@ body.lb-open{overflow:hidden}
       <li><a href="#photos">Photos</a></li>
       <li><a href="#station">La station</a></li>
       <li><a href="#inclus">Inclus</a></li>
+      <li class="lang"><a href="/" lang="fr" aria-current="page" aria-label="Version française">FR</a><span>·</span><a href="/en/" lang="en" hreflang="en" aria-label="English version">EN</a></li>
       <li><a class="btn" href="#reserver">Demander mes dates</a></li>
     </ul>
   </div>
@@ -615,6 +632,9 @@ lb.addEventListener('touchend', e => {
   if (Math.abs(dx) > 40) showLb(cur + (dx < 0 ? 1 : -1));
   else if (e.target === lbImg) showLb(cur + 1);
 });
+
+// Language switcher: keep the current section when switching
+document.querySelectorAll('.lang a').forEach(a => a.addEventListener('click', () => { a.href = a.getAttribute('href').split('#')[0] + location.hash; }));
 
 // Nav background + mobile CTA on scroll
 const nav = document.getElementById('nav'), mcta = document.getElementById('mcta'), book = document.getElementById('reserver');

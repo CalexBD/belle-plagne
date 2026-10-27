@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cassiopée · Belle Plagne — 6-guest apartment with private sauna, at the foot of the slopes</title>
+<meta name="description" content="Renovated 65 m² apartment in Belle Plagne (2,050 m): sleeps 6, 2 bedrooms, 2 shower rooms, private sauna, 3 balconies, covered parking, 20 m from the slopes. Ask for your dates.">
+<meta property="og:title" content="Cassiopée · Your alpine hideaway in Belle Plagne">
+<meta property="og:description" content="65 m², sleeps 6, private sauna, 20 m from the slopes. Ask for your dates.">
+<link rel="canonical" href="https://cocon-alpin.com/en/">
+<meta property="og:url" content="https://cocon-alpin.com/en/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:image" content="https://cocon-alpin.com/photos/01-salon-1.jpg">
+<link rel="alternate" hreflang="fr" href="https://cocon-alpin.com/">
+<link rel="alternate" hreflang="en" href="https://cocon-alpin.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://cocon-alpin.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&family=Satisfy&display=swap" rel="stylesheet">
+<!--
+  ================================================================
+  CONFIGURATION RAPIDE
+  1) Email de réception des demandes : modifier FORM_EMAIL plus bas (script).
+     Le formulaire passe par FormSubmit (gratuit, sans serveur).
+     À la 1re demande, FormSubmit envoie un email d'activation à
+     cette adresse : cliquer sur le lien une fois, c'est tout.
+  2) Photos : dossier /photos (grand format ~2000 px) et /photos/mini
+     (vignettes ~800 px). Pour ajouter ou retirer une photo de la galerie,
+     modifier la liste PHOTOS dans le script en bas de page.
+  ================================================================
+-->
+<style>
+:root{
+  --navy:#172C3C; --navy-2:#1F3A4F; --ivory:#F5F1E8; --ivory-2:#EDE6D8;
+  --bronze:#B28A5A; --taupe:#756E65; --ink:#22313D; --white:#fff;
+  --serif:'Cormorant Garamond', Georgia, serif;
+  --sans:'Montserrat', system-ui, -apple-system, sans-serif;
+  --script:'Satisfy', cursive;
+  --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ivory);color:var(--ink);font-family:var(--sans);font-weight:400;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;color:var(--navy);line-height:1.15}
+.eyebrow{font-family:var(--sans);font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--bronze);font-weight:600}
+h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);letter-spacing:.06em;text-transform:uppercase;margin:.4rem 0 1.2rem}
+.script{font-family:var(--script);font-weight:400;color:var(--bronze);font-size:1.6rem;line-height:1.3}
+.rule{width:56px;height:1px;background:var(--bronze);margin:1.2rem 0}
+section{padding:96px 0}
+
+/* Photo slots: real photo on top, labelled placeholder underneath */
+.ph{position:relative;overflow:hidden;background:linear-gradient(135deg,#2a4356,#172C3C 60%,#3b3a36);}
+.ph::before{content:attr(data-label);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:12px;color:rgba(255,255,255,.55);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+a.ph:hover img,.card:hover .ph img{transform:scale(1.04)}
+
+/* Buttons */
+.btn{display:inline-block;font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;padding:16px 30px;border:1px solid var(--bronze);background:var(--bronze);color:var(--white);cursor:pointer;transition:background .25s,color .25s}
+.btn:hover{background:transparent;color:var(--bronze)}
+.btn.ghost{background:transparent;color:var(--white);border-color:rgba(255,255,255,.7)}
+.btn.ghost:hover{background:var(--white);color:var(--navy)}
+
+/* Nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s,box-shadow .3s}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--white)}
+.brand svg{width:34px;height:20px}
+.brand b{white-space:nowrap;font-family:var(--serif);font-weight:500;font-size:1.35rem;letter-spacing:.14em}
+.brand small{display:block;font-size:.55rem;letter-spacing:.35em;opacity:.8;margin-top:-2px}
+.nav ul{display:flex;gap:30px;list-style:none;align-items:center}
+.nav ul a{color:var(--white);text-decoration:none;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;opacity:.9}
+.nav ul a:hover{opacity:1;color:var(--bronze)}
+.nav .btn{padding:11px 20px;font-size:.68rem}
+.nav.solid{background:rgba(23,44,60,.97);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+@media (max-width:860px){.nav ul li:not(:last-child):not(.lang){display:none}}
+@media (max-width:520px){.brand b{font-size:1.05rem}.nav .btn{padding:9px 12px;font-size:.6rem;letter-spacing:.14em}.facts li{font-size:.82rem}.facts .sub{letter-spacing:.16em}.facts .sub{font-size:0}.facts .sub span{font-size:.66rem}.hero-inner{padding-bottom:130px}}
+
+/* Hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;color:var(--white);padding:0}
+.hero .ph{position:absolute;inset:0}
+.hero .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(23,44,60,.62) 0%,rgba(23,44,60,.3) 45%,rgba(23,44,60,0) 70%),linear-gradient(180deg,rgba(23,44,60,.55) 0%,rgba(23,44,60,.05) 35%,rgba(23,44,60,.15) 55%,rgba(23,44,60,.85) 100%)}
+.hero-inner{position:relative;z-index:2;width:100%;padding-bottom:150px}
+.hero .script{color:#E9D6B8;font-size:clamp(2.2rem,5vw,3.6rem)}
+.hero h1{color:var(--white);white-space:nowrap;font-size:clamp(2.3rem,8vw,6rem);letter-spacing:.1em;text-transform:uppercase;font-weight:400;margin:.1em 0 .2em}
+.hero p.lead{font-family:var(--serif);font-size:clamp(1.15rem,2.2vw,1.5rem);letter-spacing:.14em;text-transform:uppercase;max-width:640px;opacity:.95}
+.hero .ctas{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+
+/* Facts band */
+.facts{position:relative;z-index:3;margin-top:-92px;padding:0}
+.facts .band{background:var(--navy);color:var(--white);box-shadow:0 30px 60px -30px rgba(0,0,0,.4)}
+.facts ul{list-style:none;display:grid;grid-template-columns:repeat(5,1fr)}
+.facts li{text-align:center;padding:28px 10px 22px;border-right:1px solid rgba(178,138,90,.35);font-size:.92rem}
+.facts li:last-child{border-right:0}
+.facts li svg{display:block;width:30px;height:30px;stroke:var(--bronze);fill:none;stroke-width:1.3;margin:0 auto 10px}
+.facts .sub{border-top:1px solid rgba(178,138,90,.35);text-align:center;padding:14px 10px;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:#E3D7C4}
+.facts .sub span{margin:0 14px;white-space:nowrap}
+@media (max-width:760px){.facts ul{grid-template-columns:repeat(3,1fr)}.facts li:nth-child(3){border-right:0}.facts li:nth-child(n+4){border-top:1px solid rgba(178,138,90,.35)}.facts .sub span{display:block;margin:4px 0}}
+
+/* Intro */
+.intro .grid{display:grid;grid-template-columns:1.05fr 1fr;gap:72px;align-items:center}
+.intro .tag{font-family:var(--serif);font-size:1.45rem;color:var(--navy);margin-bottom:1rem;line-height:1.35}
+.intro p{color:var(--taupe);margin-bottom:1rem;max-width:520px}
+.intro p.strong{color:var(--navy);font-weight:500}
+.intro .ph{aspect-ratio:4/5}
+@media (max-width:860px){.intro .grid{grid-template-columns:1fr;gap:40px}.intro .ph{aspect-ratio:4/3}}
+
+/* Why */
+.why{background:var(--white);}
+.why .grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:46px}
+.why .item{padding:6px 26px;border-left:1px solid var(--ivory-2)}
+.why .item:first-child{border-left:0;padding-left:0}
+.why svg{display:block;width:34px;height:34px;stroke:var(--bronze);fill:none;stroke-width:1.2;margin-bottom:18px}
+.why h3{font-family:var(--sans);font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px;line-height:1.45}
+.why p{font-size:.88rem;color:var(--taupe)}
+.why .script{font-size:clamp(1.7rem,3vw,2.3rem);color:#8F6A3E;margin:52px auto 0;text-align:center;max-width:900px;line-height:1.35;text-wrap:balance}
+@media (max-width:980px){.why .grid{grid-template-columns:repeat(2,1fr);gap:36px}.why .item,.why .item:first-child{border-left:0;padding:0}}
+@media (max-width:540px){.why .grid{grid-template-columns:1fr}}
+
+/* Rooms */
+.rooms .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:40px}
+@media (max-width:1100px){.rooms .grid{grid-template-columns:repeat(3,1fr)}}
+.card .ph{aspect-ratio:4/3;margin-bottom:18px}
+.card h3{font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--bronze);margin-bottom:4px}
+.card .spec{font-size:.82rem;font-weight:600;color:var(--navy);margin-bottom:6px}
+.card p{font-size:.9rem;color:var(--taupe)}
+@media (max-width:900px){.rooms .grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.rooms .grid{grid-template-columns:1fr}}
+
+/* Apres-ski banner */
+.apres{position:relative;padding:0;color:var(--white)}
+.apres .ph{position:absolute;inset:0}
+.apres .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(23,44,60,.92) 0%,rgba(23,44,60,.7) 45%,rgba(23,44,60,.2) 100%)}
+.apres .inner{position:relative;z-index:2;padding:110px 0}
+.apres h2{color:var(--white)}
+.apres ul{list-style:none;display:grid;grid-template-columns:repeat(4,auto);gap:34px;justify-content:start;margin-top:30px}
+.apres li{text-align:center;font-size:.85rem;max-width:140px}
+.apres li svg{display:block;width:34px;height:34px;stroke:var(--bronze);fill:none;stroke-width:1.2;margin:0 auto 10px}
+.apres .script{color:#E9D6B8;font-size:2rem;margin-top:40px}
+@media (max-width:700px){.apres ul{grid-template-columns:repeat(2,1fr)}}
+
+/* Location */
+.loc .grid{display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:center}
+.loc .ph{aspect-ratio:5/4}
+.loc .meta{font-size:.95rem;color:var(--navy);letter-spacing:.08em;margin-bottom:1.2rem}
+.loc .meta span{color:var(--bronze);margin:0 10px}
+.loc p{color:var(--taupe);margin-bottom:1.4rem}
+.loc ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:16px 28px}
+.loc li{display:flex;align-items:center;gap:14px;font-size:.92rem}
+.loc li svg{width:26px;height:26px;stroke:var(--bronze);fill:none;stroke-width:1.3;flex:none}
+.loc .note{font-style:italic;font-size:.85rem;margin-top:1.4rem}
+@media (max-width:860px){.loc .grid{grid-template-columns:1fr;gap:40px}}
+
+/* Included */
+.incl{background:var(--ivory-2)}
+.incl .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 40px;margin-top:36px;list-style:none}
+.incl li{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid rgba(117,110,101,.18);font-size:.95rem}
+.incl li svg{width:18px;height:18px;stroke:var(--bronze);fill:none;stroke-width:1.8;flex:none}
+@media (max-width:860px){.incl .grid{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.incl .grid{grid-template-columns:1fr}}
+
+/* Booking */
+.book{background:var(--navy);color:var(--white)}
+.book .grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:72px}
+.book h2{color:var(--white)}
+.book .intro-txt{color:#D9D2C5;margin-bottom:1.6rem}
+.book .steps{list-style:none;counter-reset:s;margin-top:10px}
+.book .steps li{counter-increment:s;display:flex;gap:16px;margin-bottom:18px;font-size:.92rem;color:#E3DDD2}
+.book .steps li::before{content:counter(s);flex:none;width:30px;height:30px;border:1px solid var(--bronze);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.05rem;color:var(--bronze)}
+.book .mail{margin-top:28px;font-size:.88rem;color:#D9D2C5}
+.book .mail a{color:var(--white)}
+form{background:var(--ivory);color:var(--ink);padding:40px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{margin-bottom:18px}
+label{display:block;font-size:.66rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--navy);margin-bottom:7px}
+label .opt{font-weight:400;color:var(--taupe);letter-spacing:.05em;text-transform:none}
+input,select,textarea{width:100%;font:inherit;font-size:.95rem;color:var(--ink);background:var(--white);border:1px solid #D9D1C2;padding:12px 14px;border-radius:0;outline:none;transition:border-color .2s}
+input:focus,select:focus,textarea:focus{border-color:var(--bronze)}
+textarea{min-height:110px;resize:vertical}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:.8rem;font-weight:400;letter-spacing:0;text-transform:none;color:var(--taupe);margin:4px 0 22px}
+.check input{width:auto;margin-top:4px}
+form .btn{width:100%}
+.hp{position:absolute;left:-9999px}
+.msg{display:none;padding:16px 18px;margin-top:16px;font-size:.9rem}
+.msg.ok{display:block;background:#E6EEE5;color:#2E4A33}
+.msg.err{display:block;background:#F5E3DF;color:#7A2E22}
+@media (max-width:900px){.book .grid{grid-template-columns:1fr;gap:44px}}
+@media (max-width:520px){.row{grid-template-columns:1fr;gap:0}form{padding:26px 20px}}
+
+/* Footer */
+footer{background:#10202D;color:#B9B2A6;padding:46px 0;font-size:.8rem}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer .script{font-size:1.5rem}
+
+/* Sticky mobile CTA */
+.mcta{display:none}
+@media (max-width:860px){
+  .mcta{display:block;position:fixed;bottom:0;left:0;right:0;z-index:60;padding:12px 16px;background:rgba(23,44,60,.97);transform:translateY(100%);transition:transform .3s}
+  .mcta.show{transform:none}
+  .mcta .btn{width:100%;text-align:center}
+  section{padding:72px 0}
+}
+
+/* Room cards open the gallery */
+.card[data-open]{cursor:pointer;outline:none}
+.card[data-open]:focus-visible .ph{box-shadow:0 0 0 2px var(--bronze)}
+.card .count{position:absolute;right:10px;bottom:10px;z-index:2;background:rgba(23,44,60,.82);color:#fff;font-size:.62rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:6px 10px}
+.card .count:empty{display:none}
+
+/* Gallery */
+.gallery{background:var(--white)}
+.gal-intro{color:var(--taupe);font-size:.9rem;margin-bottom:34px}
+.masonry{columns:4 240px;column-gap:14px}
+.masonry button{all:unset;display:block;position:relative;width:100%;margin:0 0 14px;break-inside:avoid;cursor:pointer;overflow:hidden;background:var(--ivory-2)}
+.masonry img{width:100%;height:auto;transition:transform .7s ease,opacity .3s}
+.masonry button:hover img{transform:scale(1.035)}
+.masonry button:focus-visible{outline:2px solid var(--bronze);outline-offset:2px}
+.masonry .cap{position:absolute;left:0;right:0;bottom:0;padding:22px 12px 10px;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:linear-gradient(transparent,rgba(23,44,60,.8));opacity:0;transition:opacity .3s}
+.masonry button:hover .cap,.masonry button:focus-visible .cap{opacity:1}
+@media (hover:none){.masonry .cap{opacity:1}}
+.masonry .plan img{background:#fff;padding:10px}
+
+/* Lightbox */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(14,26,36,.97);display:flex;align-items:center;justify-content:center}
+.lb[hidden]{display:none}
+.lb figure{margin:0;max-width:92vw;display:flex;flex-direction:column;align-items:center}
+.lb img{max-width:92vw;max-height:84vh;width:auto;height:auto;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.5);user-select:none;-webkit-user-drag:none}
+.lb figcaption{display:flex;gap:18px;justify-content:space-between;width:100%;margin-top:14px;color:#E3D7C4;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase}
+.lb figcaption #lbNum{color:var(--bronze);white-space:nowrap}
+.lb button{background:none;border:0;color:#fff;cursor:pointer;font-family:var(--serif);line-height:1;opacity:.75;transition:opacity .2s}
+.lb button:hover,.lb button:focus-visible{opacity:1;outline:none}
+.lb-x{position:absolute;top:14px;right:20px;font-size:2.6rem}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);font-size:4rem;padding:20px}
+.lb-nav.prev{left:6px}.lb-nav.next{right:6px}
+@media (max-width:700px){.lb-nav{display:none}.lb img{max-height:78vh}}
+body.lb-open{overflow:hidden}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
+
+/* Language switcher */
+.nav .lang{display:flex;align-items:center;gap:7px;font-size:.72rem;letter-spacing:.2em;color:rgba(255,255,255,.45)}
+.nav .lang a{text-decoration:none;opacity:.6;padding:4px 0;border-bottom:1px solid transparent}
+.nav .lang a:hover{opacity:1;color:var(--white)}
+.nav .lang a[aria-current]{opacity:1;color:var(--white);border-bottom-color:var(--bronze)}
+@media (max-width:520px){.nav .wrap{padding:0 16px;gap:12px}.brand svg{display:none}.nav ul{gap:12px}.nav .lang{font-size:.64rem;letter-spacing:.14em;gap:5px}.nav .btn{white-space:nowrap}}
+@media (max-width:380px){.nav .btn{padding:9px 9px;letter-spacing:.08em}.nav ul{gap:10px}.brand b{font-size:.98rem}}
+</style>
+</head>
+<body>
+
+<!-- Icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-mtn" viewBox="0 0 32 32"><path d="M2 26 12 9l5 8 3-4 10 13Z"/><path d="m9.5 13.5 2.5 2 2-2.5"/></symbol>
+  <symbol id="i-people" viewBox="0 0 32 32"><circle cx="12" cy="10" r="4.5"/><path d="M3.5 26c0-5 3.8-8.5 8.5-8.5s8.5 3.5 8.5 8.5"/><circle cx="22.5" cy="11.5" r="3.5"/><path d="M21 18.2c4.4-.6 8 2.4 8 7.3"/></symbol>
+  <symbol id="i-bed" viewBox="0 0 32 32"><path d="M3 24V8M3 19h26v5M29 19v-4a3 3 0 0 0-3-3H14v7"/><rect x="6" y="13" width="6" height="4" rx="1.5"/></symbol>
+  <symbol id="i-shower" viewBox="0 0 32 32"><path d="M7 28V9a5 5 0 0 1 10 0"/><path d="M13 13h8a4 4 0 0 0-8 0Z"/><path d="M15 17v1.5M17 17.5l.5 1.5M19 17v1.5"/><path d="M24 28h4"/></symbol>
+  <symbol id="i-sauna" viewBox="0 0 32 32"><path d="M4 28h24M7 28V18h18v10M7 22h18"/><path d="M12 14c-1-2 1-3 0-5M16 14c-1-2 1-3 0-5M20 14c-1-2 1-3 0-5"/></symbol>
+  <symbol id="i-ski" viewBox="0 0 32 32"><circle cx="20" cy="6" r="2.5"/><path d="m4 22 24 8M11 13l6-3 3 5-5 4 3 6"/><path d="m8 24 4-8"/></symbol>
+  <symbol id="i-spa" viewBox="0 0 32 32"><path d="M16 27c-6 0-11-4-11-9 4 0 8 2 11 6 3-4 7-6 11-6 0 5-5 9-11 9Z"/><path d="M16 24c-3-3-4-7-3-12 1.5 1 2.5 2.4 3 4 .5-1.6 1.5-3 3-4 1 5 0 9-3 12Z"/></symbol>
+  <symbol id="i-home" viewBox="0 0 32 32"><path d="M4 15 16 5l12 10M7 13v14h18V13"/><path d="M13 27v-8h6v8"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 32 32"><path d="M4 24h24M9 24a7 7 0 0 1 14 0"/><path d="M16 9V5M7 13l-3-2.5M25 13l3-2.5M11 10 9.5 6.5M21 10l1.5-3.5"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 32 32"><rect x="5" y="11" width="22" height="16" rx="2"/><path d="M11 11V8a5 5 0 0 1 10 0v3"/></symbol>
+  <symbol id="i-tv" viewBox="0 0 32 32"><rect x="3" y="7" width="26" height="16" rx="1.5"/><path d="M11 27h10M16 23v4"/><path d="m14 12 5 3-5 3Z"/></symbol>
+  <symbol id="i-pot" viewBox="0 0 32 32"><path d="M5 15h22v6a6 6 0 0 1-6 6H11a6 6 0 0 1-6-6Z"/><path d="M3 15h26M12 11c-1-2 1-3 0-5M17 11c-1-2 1-3 0-5"/></symbol>
+  <symbol id="i-fork" viewBox="0 0 32 32"><path d="M10 4v8a3 3 0 0 0 6 0V4M13 4v24"/><path d="M22 28V4c3 2 4 6 4 10h-4"/></symbol>
+  <symbol id="i-bread" viewBox="0 0 32 32"><path d="M6 22c-3-3-2-8 3-11s12-6 16-3 3 9-2 12-14 5-17 2Z"/><path d="m11 13 3 5M16 10.5l3 5M21 8.5l2.5 4.5"/></symbol>
+  <symbol id="i-shop" viewBox="0 0 32 32"><path d="M5 12 7 5h18l2 7M5 12v15h22V12M5 12c0 2 1.5 3 3.5 3s3.5-1 3.5-3c0 2 1.5 3 4 3s4-1 4-3c0 2 1.5 3 3.5 3S27 14 27 12"/><path d="M13 27v-7h6v7"/></symbol>
+  <symbol id="i-boot" viewBox="0 0 32 32"><path d="M10 4h8v11l7 4c2 1 3 3 3 5v2H8V8"/><path d="M8 22h20"/></symbol>
+  <symbol id="i-check" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9"/></symbol>
+</svg>
+
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Cassiopée — home">
+      <svg viewBox="0 0 34 20" fill="none" stroke="#B28A5A" stroke-width="1.4"><path d="M1 19 12 3l6 9 4-5 11 12"/></svg>
+      <span><b>CASSIOPÉE</b><small>BELLE PLAGNE</small></span>
+    </a>
+    <ul>
+      <li><a href="#appartement">The apartment</a></li>
+      <li><a href="#confort">Comfort</a></li>
+      <li><a href="#photos">Photos</a></li>
+      <li><a href="#station">The resort</a></li>
+      <li><a href="#inclus">Included</a></li>
+      <li class="lang"><a href="/" lang="fr" hreflang="fr" aria-label="Version française">FR</a><span>·</span><a href="/en/" lang="en" aria-current="page" aria-label="English version">EN</a></li>
+      <li><a class="btn" href="#reserver">Check availability</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="ph" data-label="Living room"><img src="../photos/01-salon-1.jpg" alt="The bright living room at Cassiopée, overlooking the peaks" onerror="this.remove()" fetchpriority="high"></div>
+  <div class="wrap hero-inner">
+    <div class="script">Your alpine hideaway</div>
+    <h1>Cassiopée</h1>
+    <p class="lead">With a private sauna, at the foot of the Belle Plagne slopes</p>
+    <div class="ctas">
+      <a class="btn" href="#reserver">Check availability</a>
+      <a class="btn ghost" href="#confort">Discover the apartment</a>
+    </div>
+  </div>
+</header>
+
+<div class="facts wrap">
+  <div class="band">
+    <ul>
+      <li><svg><use href="#i-mtn"/></svg>65 m²</li>
+      <li><svg><use href="#i-people"/></svg>Sleeps 6</li>
+      <li><svg><use href="#i-bed"/></svg>2 bedrooms</li>
+      <li><svg><use href="#i-shower"/></svg>2 shower rooms</li>
+      <li><svg><use href="#i-sauna"/></svg>Private sauna</li>
+    </ul>
+    <div class="sub"><span>20 metres from the slopes</span>·<span>3 balconies</span>·<span>Covered parking included</span></div>
+  </div>
+</div>
+
+<section class="intro" id="appartement">
+  <div class="wrap grid">
+    <div class="reveal">
+      <div class="eyebrow">The apartment</div>
+      <h2 class="title">A week of skiing,<br>with no compromise on comfort</h2>
+      <p class="tag">Some apartments are just somewhere to sleep.<br>And then there is this one.</p>
+      <p>At 2,050 metres, in the heart of Belle Plagne, Cassiopée has been fully renovated so that the joy of skiing carries on right into the apartment.</p>
+      <p>In the morning, the slopes are just a few steps away. In the afternoon, you ski back almost to the door. In the evening, you enjoy a private sauna, a relaxed dinner together and the last light on the peaks from the balconies.</p>
+      <p class="strong">Everything is in place to make the most of the mountains — no car, no hassle, and all the comfort of an apartment designed for holidays.</p>
+    </div>
+    <div class="ph reveal" data-label="Sunset from the balcony"><img src="../photos/02-sunset-balcon-1.jpg" alt="Sunset over the peaks from the balcony" loading="lazy" onerror="this.remove()"></div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="eyebrow">Why you'll love it</div>
+    <div class="grid">
+      <div class="item reveal"><svg><use href="#i-ski"/></svg><h3>Effortless skiing</h3><p>Slopes and ski schools 20 m away. Equipment hire, shops and restaurants at the foot of the residence.</p></div>
+      <div class="item reveal"><svg><use href="#i-spa"/></svg><h3>Your private spa after skiing</h3><p>The private sauna is right inside the apartment, for a proper chance to unwind.</p></div>
+      <div class="item reveal"><svg><use href="#i-home"/></svg><h3>All the comfort of a chalet</h3><p>65 m² finished in wood, two large bedrooms and two shower rooms: room for six, with chalet-style comfort at the foot of the slopes.</p></div>
+      <div class="item reveal"><svg><use href="#i-sun"/></svg><h3>Evenings facing the peaks</h3><p>Three balconies to take in the panorama and enjoy the last light of the day.</p></div>
+      <div class="item reveal"><svg><use href="#i-bag"/></svg><h3>Every detail taken care of</h3><p>Covered parking, heated ski locker, bed linen and towels provided, cleaning included, fibre Wi-Fi.</p></div>
+    </div>
+    <p class="script">Park the car when you arrive… and forget about it all week.</p>
+  </div>
+</section>
+
+<section class="rooms" id="confort">
+  <div class="wrap">
+    <div class="eyebrow">Comfort in detail</div>
+    <h2 class="title">Every room designed for après-ski</h2>
+    <div class="grid">
+      <article class="card reveal" data-open="chambre-principale" tabindex="0" role="button" aria-label="View photos: Main bedroom">
+        <div class="ph" data-label="Main bedroom"><img src="../photos/mini/03-chambre-principale-1.jpg" alt="Main bedroom, double bed and wooden headboard" loading="lazy" onerror="this.remove()"><span class="count" data-count="chambre-principale"></span></div>
+        <h3>Main bedroom</h3><div class="spec">160 × 200 cm double bed</div>
+        <p>A proper double bedroom, designed as a place to rest after a day in the mountains.</p>
+      </article>
+      <article class="card reveal" data-open="chambre-modulable" tabindex="0" role="button" aria-label="View photos: Flexible bedroom">
+        <div class="ph" data-label="Flexible bedroom"><img src="../photos/mini/04-chambre-modulable-2.jpg" alt="Flexible bedroom, large bed" loading="lazy" onerror="this.remove()"><span class="count" data-count="chambre-modulable"></span></div>
+        <h3>Flexible bedroom</h3><div class="spec">2 × 90 × 200 cm → 180 × 200 cm</div>
+        <p>Two single beds that can be joined into one large king-size bed. Private shower room.</p>
+      </article>
+      <article class="card reveal" data-open="sejour" tabindex="0" role="button" aria-label="View photos: Living room">
+        <div class="ph" data-label="Living room"><img src="../photos/mini/01-salon-2.jpg" alt="The living room and its corner sofa" loading="lazy" onerror="this.remove()"><span class="count" data-count="sejour"></span></div>
+        <h3>Living room</h3><div class="spec">160 × 200 cm sofa bed</div>
+        <p>Large screen, home cinema and soundbar: a real lounge to get together after skiing.</p>
+      </article>
+      <article class="card reveal" data-open="repas" tabindex="0" role="button" aria-label="View photos: Dining area">
+        <div class="ph" data-label="Dining area"><img src="../photos/mini/05-sejour-1.jpg" alt="The table set for six" loading="lazy" onerror="this.remove()"><span class="count" data-count="repas"></span></div>
+        <h3>Dining area</h3><div class="spec">A table for six</div>
+        <p>Raclettes, fondues and long dinners: the table opens onto the kitchen and living room.</p>
+      </article>
+      <article class="card reveal" data-open="sauna" tabindex="0" role="button" aria-label="View photos: Private sauna">
+        <div class="ph" data-label="Private sauna"><img src="../photos/mini/06-sauna.jpg" alt="The private sauna" loading="lazy" onerror="this.remove()"><span class="count" data-count="sauna"></span></div>
+        <h3>Private sauna</h3><div class="spec">Inside the apartment</div>
+        <p>After a day on the slopes, enjoy your own sauna in peace, without leaving the apartment.</p>
+      </article>
+      <article class="card reveal" data-open="cuisine" tabindex="0" role="button" aria-label="View photos: Fully equipped kitchen">
+        <div class="ph" data-label="Fully equipped kitchen"><img src="../photos/mini/07-cuisine.jpg" alt="Fully equipped kitchen" loading="lazy" onerror="this.remove()"><span class="count" data-count="cuisine"></span></div>
+        <h3>Fully equipped kitchen</h3><div class="spec">Everything to cook just like at home</div>
+        <p>Oven, microwave, induction hob, dishwasher, Nespresso.</p>
+      </article>
+      <article class="card reveal" data-open="salles-d-eau" tabindex="0" role="button" aria-label="View photos: Two shower rooms">
+        <div class="ph" data-label="Two shower rooms"><img src="../photos/mini/14-salle-d-eau-chambre-separee-2.jpg" alt="Shower room with washbasin and WC" loading="lazy" onerror="this.remove()"><span class="count" data-count="salles-d-eau"></span></div>
+        <h3>Two shower rooms</h3><div class="spec">Shower, washbasin & towel warmer</div>
+        <p>A private shower room for the flexible bedroom and a second one for the rest of the apartment: no more morning queues.</p>
+      </article>
+      <article class="card reveal" data-open="entree" tabindex="0" role="button" aria-label="View photos: Entrance">
+        <div class="ph" data-label="Entrance"><img src="../photos/mini/15-entree-1.jpg" alt="The entrance with bench, coat hooks and shelves" loading="lazy" onerror="this.remove()"><span class="count" data-count="entree"></span></div>
+        <h3>Entrance</h3><div class="spec">Bench, coat hooks &amp; storage</div>
+        <p>Somewhere to leave coats, hats and boots as soon as you arrive, without cluttering the apartment.</p>
+      </article>
+      <article class="card reveal" data-open="teletravail" tabindex="0" role="button" aria-label="View photos: Remote-work corner">
+        <div class="ph" data-label="Remote-work corner"><img src="../photos/mini/12-bureau-teletravail.jpg" alt="Desk facing the window for remote work" loading="lazy" onerror="this.remove()"><span class="count" data-count="teletravail"></span></div>
+        <h3>Remote-work corner</h3><div class="spec">Removable desks &amp; fibre Wi-Fi</div>
+        <p>Need to log on for a few hours? Set up a proper workstation, then put it away to get the space back.</p>
+      </article>
+      <article class="card reveal" data-open="balcons" tabindex="0" role="button" aria-label="View photos: The 3 balconies">
+        <div class="ph" data-label="The 3 balconies"><img src="../photos/mini/08-balcons-2.jpg" alt="Balcony with table and view over the resort" loading="lazy" onerror="this.remove()"><span class="count" data-count="balcons"></span></div>
+        <h3>The 3 balconies</h3><div class="spec">Mountain views</div>
+        <p>A coffee facing the mountains, a drink in the last evening light: enjoy the view of the peaks.</p>
+      </article>
+      <article class="card reveal" data-open="machine" tabindex="0" role="button" aria-label="View photos: Washing machine">
+        <div class="ph" data-label="Washing machine"><img src="../photos/mini/11-machine-a-laver-2.jpg" alt="Washing machine in the apartment" loading="lazy" onerror="this.remove()"><span class="count" data-count="machine"></span></div>
+        <h3>Washing machine</h3><div class="spec">In the apartment, for your use</div>
+        <p>Ski wear, base layers, children's clothes: wash on site and travel lighter. No launderette to hunt for.</p>
+      </article>
+      <article class="card reveal" data-open="casier" tabindex="0" role="button" aria-label="View photos: Ski locker">
+        <div class="ph" data-label="Ski locker"><img src="../photos/mini/16-casier-ski.jpg" alt="Heated ski locker" loading="lazy" onerror="this.remove()"><span class="count" data-count="casier"></span></div>
+        <h3>Ski locker</h3><div class="spec">Heated, at the foot of the slopes</div>
+        <p>Skis and boots stay dry and warm: every morning, you head out in dry boots.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="photos">
+  <div class="wrap">
+    <div class="eyebrow">In pictures</div>
+    <h2 class="title">All the photos</h2>
+    <p class="gal-intro">Tap a photo to see it full size, then browse through.</p>
+    <div class="masonry" id="masonry"></div>
+  </div>
+</section>
+
+<section class="apres">
+  <div class="ph" data-label="Après-ski"><img src="../photos/10-apres-ski.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+  <div class="wrap inner reveal">
+    <div class="eyebrow">Après-ski starts here</div>
+    <h2 class="title">More than an apartment,<br>an experience to share</h2>
+    <ul>
+      <li><svg><use href="#i-sauna"/></svg>Private sauna</li>
+      <li><svg><use href="#i-tv"/></svg>Home cinema &amp; soundbar</li>
+      <li><svg><use href="#i-pot"/></svg>Raclette &amp; family dinners</li>
+      <li><svg><use href="#i-sun"/></svg>Balconies &amp; mountain views</li>
+    </ul>
+  </div>
+</section>
+
+<section class="loc" id="station">
+  <div class="wrap grid">
+    <div class="ph reveal" data-label="Belle Plagne"><img src="../photos/09-belle-plagne-2.jpg" alt="Belle Plagne and the gondola seen from the alpine meadows" loading="lazy" onerror="this.remove()"></div>
+    <div class="reveal">
+      <div class="eyebrow">The resort</div>
+      <h2 class="title">Belle Plagne on your doorstep</h2>
+      <div class="meta">2,050 m altitude<span>·</span>Paradiski<span>·</span>425 km of slopes</div>
+      <p>Set in the heart of Belle Plagne, Cassiopée enjoys a particularly convenient location. Just a few steps away:</p>
+      <ul>
+        <li><svg><use href="#i-ski"/></svg>Slopes &amp; ski schools</li>
+        <li><svg><use href="#i-fork"/></svg>Restaurants</li>
+        <li><svg><use href="#i-bread"/></svg>Bakery</li>
+        <li><svg><use href="#i-boot"/></svg>Equipment hire</li>
+        <li><svg><use href="#i-shop"/></svg>Grocery shop</li>
+        <li><svg><use href="#i-spa"/></svg>Spa</li>
+      </ul>
+      <p class="note">The residence has been fully renovated and enjoys a central location.</p>
+    </div>
+  </div>
+</section>
+
+<section class="incl" id="inclus">
+  <div class="wrap">
+    <div class="eyebrow">Everything included</div>
+    <h2 class="title">You arrive with your suitcases.<br>Everything else is taken care of.</h2>
+    <ul class="grid">
+      <li><svg><use href="#i-check"/></svg>65 m², sleeps 6</li>
+      <li><svg><use href="#i-check"/></svg>2 bedrooms, 2 shower rooms</li>
+      <li><svg><use href="#i-check"/></svg>Private sauna</li>
+      <li><svg><use href="#i-check"/></svg>3 balconies</li>
+      <li><svg><use href="#i-check"/></svg>Covered parking</li>
+      <li><svg><use href="#i-check"/></svg>Heated ski locker</li>
+      <li><svg><use href="#i-check"/></svg>Bed linen &amp; towels</li>
+      <li><svg><use href="#i-check"/></svg>Cleaning included</li>
+      <li><svg><use href="#i-check"/></svg>Fibre Wi-Fi</li>
+      <li><svg><use href="#i-check"/></svg>Equipped kitchen &amp; Nespresso</li>
+      <li><svg><use href="#i-check"/></svg>Washing machine in the apartment</li>
+      <li><svg><use href="#i-check"/></svg>Removable desks for remote work</li>
+      <li><svg><use href="#i-check"/></svg>3 TVs, home cinema &amp; soundbar</li>
+      <li><svg><use href="#i-check"/></svg>Baby cot on request</li>
+    </ul>
+  </div>
+</section>
+
+<section class="book" id="reserver">
+  <div class="wrap grid">
+    <div class="reveal">
+      <div class="eyebrow">Your week in Belle Plagne</div>
+      <h2 class="title">Request your dates</h2>
+      <p class="intro-txt">Tell us your dates and the number of guests: we'll get back to you with availability and the corresponding rate.</p>
+      <ol class="steps">
+        <li>You send your request, with no commitment.</li>
+        <li>We confirm availability and the rate for your dates.</li>
+        <li>You finalise the booking — and all that's left is to get your skis ready.</li>
+      </ol>
+      <p class="mail">Prefer to write to us directly?<br><a id="mailLink" href="mailto:laplagnecassiopee310@gmail.com">laplagnecassiopee310@gmail.com</a></p>
+    </div>
+
+    <form id="bookForm" class="reveal" novalidate>
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="row">
+        <div class="field"><label for="prenom">First name</label><input id="prenom" name="Prénom" required autocomplete="given-name"></div>
+        <div class="field"><label for="nom">Last name</label><input id="nom" name="Nom" required autocomplete="family-name"></div>
+      </div>
+      <div class="row">
+        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+        <div class="field"><label for="tel">Phone <span class="opt">(optional)</span></label><input id="tel" name="Téléphone" type="tel" autocomplete="tel"></div>
+      </div>
+      <div class="row">
+        <div class="field"><label for="arrivee">Arrival</label><input id="arrivee" name="Arrivée" type="date" required></div>
+        <div class="field"><label for="depart">Departure</label><input id="depart" name="Départ" type="date" required></div>
+      </div>
+      <div class="row">
+        <div class="field"><label for="adultes">Adults</label>
+          <select id="adultes" name="Adultes" required><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></div>
+        <div class="field"><label for="enfants">Children <span class="opt">(under 12)</span></label>
+          <select id="enfants" name="Enfants"><option selected>0</option><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
+      </div>
+      <div class="field"><label for="message">Message <span class="opt">(optional)</span></label>
+        <textarea id="message" name="Message" placeholder="Flexible dates, baby cot, questions…"></textarea></div>
+      <label class="check"><input type="checkbox" id="rgpd" required> I agree that my details will be used solely to handle my booking request.</label>
+      <button class="btn" type="submit" id="submitBtn">Send my request</button>
+      <div class="msg" id="formMsg" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><span class="script">See you soon in Belle Plagne!</span></div>
+    <div>Cassiopée · Belle Plagne, 73210 La Plagne Tarentaise</div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Apartment photos" hidden>
+  <button class="lb-x" id="lbClose" aria-label="Close">&times;</button>
+  <button class="lb-nav prev" id="lbPrev" aria-label="Previous photo">&#8249;</button>
+  <figure><img id="lbImg" alt=""><figcaption><span id="lbCap"></span><span id="lbNum"></span></figcaption></figure>
+  <button class="lb-nav next" id="lbNext" aria-label="Next photo">&#8250;</button>
+</div>
+
+<div class="mcta" id="mcta"><a class="btn" href="#reserver">Check availability</a></div>
+
+<script>
+/* ===== CONFIG : adresse qui reçoit les demandes ===== */
+const FORM_EMAIL = 'laplagnecassiopee310@gmail.com';
+
+// ===== Photos (galerie + visionneuse) =====
+const PHOTOS = [
+  ['01-salon-1','The living room','sejour'],
+  ['01-salon-2','The lounge and its sofa bed','sejour'],
+  ['01-salon-3','TV corner, with the sauna behind','sejour'],
+  ['10-apres-ski','Evening in the living room','sejour'],
+  ['05-sejour-1','The table set for six','repas'],
+  ['05-sejour-2','Dining area and kitchen','repas'],
+  ['05-sejour-3','Dinner overlooking the lounge','repas'],
+  ['05-sejour-4','The table, sauna side','repas'],
+  ['07-cuisine','The equipped kitchen','cuisine'],
+  ['06-sauna','The private sauna','sauna'],
+  ['03-chambre-principale-1','Main bedroom','chambre-principale'],
+  ['03-chambre-principale-2','Main bedroom, window side','chambre-principale'],
+  ['03-chambre-principale-3','Main bedroom, reading lights and shelf','chambre-principale'],
+  ['03-chambre-principale-4','Main bedroom, view over the resort','chambre-principale'],
+  ['03-chambre-principale-5','Main bedroom, TV side','chambre-principale'],
+  ['04-chambre-modulable-1','Flexible bedroom','chambre-modulable'],
+  ['04-chambre-modulable-2','Flexible bedroom, beds joined','chambre-modulable'],
+  ['04-chambre-modulable-3','Flexible bedroom, headboard','chambre-modulable'],
+  ['13-salle-d-eau-chambre-modulable-1','Flexible bedroom shower room','salles-d-eau'],
+  ['13-salle-d-eau-chambre-modulable-2','Flexible bedroom shower room','salles-d-eau'],
+  ['14-salle-d-eau-chambre-separee-2','Second shower room','salles-d-eau'],
+  ['14-salle-d-eau-chambre-separee-3','Second shower room, shower','salles-d-eau'],
+  ['15-entree-1','Entrance','entree'],
+  ['12-bureau-teletravail','Remote-work corner','teletravail'],
+  ['04-chambre-modulable-4','Desk and TV in the flexible bedroom','teletravail'],
+  ['11-machine-a-laver-2','Washing machine and storage','machine'],
+  ['11-machine-a-laver-1','The hallway, washing machine at the end','machine'],
+  ['16-casier-ski','The heated ski locker','casier'],
+  ['08-balcons-2','Coffee on the balcony','balcons'],
+  ['08-balcons-1','View from the balcony','balcons'],
+  ['02-sunset-balcon-1','Sunset from the balcony','balcons'],
+  ['02-sunset-balcon-2','Evening light on the peaks','balcons'],
+  ['09-belle-plagne-1','The heart of Belle Plagne','station'],
+  ['09-belle-plagne-2','Belle Plagne in summer','station'],
+  ['17-plan','Apartment floor plan','plan']
+];
+const masonry = document.getElementById('masonry');
+PHOTOS.forEach(([f, cap, g], i) => {
+  const b = document.createElement('button');
+  if (g === 'plan') b.className = 'plan';
+  b.setAttribute('aria-label', cap);
+  b.innerHTML = `<img src="../photos/mini/${f}.jpg" alt="${cap.replace(/"/g,'&quot;')}" loading="lazy"><span class="cap">${cap}</span>`;
+  b.addEventListener('click', () => openLb(i));
+  masonry.appendChild(b);
+});
+document.querySelectorAll('[data-count]').forEach(el => {
+  const n = PHOTOS.filter(p => p[2] === el.dataset.count).length;
+  if (n > 1) el.textContent = n + ' photos';
+});
+document.querySelectorAll('.card[data-open]').forEach(card => {
+  const go = () => { const i = PHOTOS.findIndex(p => p[2] === card.dataset.open); if (i >= 0) openLb(i); };
+  card.addEventListener('click', go);
+  card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); go(); } });
+});
+
+const lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg'),
+      lbCap = document.getElementById('lbCap'), lbNum = document.getElementById('lbNum');
+let cur = 0, lastFocus = null;
+function showLb(i){
+  cur = (i + PHOTOS.length) % PHOTOS.length;
+  const [f, cap] = PHOTOS[cur];
+  lbImg.src = `../photos/${f}.jpg`; lbImg.alt = cap;
+  lbCap.textContent = cap; lbNum.textContent = `${cur + 1} / ${PHOTOS.length}`;
+  [cur + 1, cur - 1].forEach(j => { const k = (j + PHOTOS.length) % PHOTOS.length; new Image().src = `../photos/${PHOTOS[k][0]}.jpg`; });
+}
+function openLb(i){ lastFocus = document.activeElement; lb.hidden = false; document.body.classList.add('lb-open'); showLb(i); document.getElementById('lbClose').focus(); }
+function closeLb(){ lb.hidden = true; document.body.classList.remove('lb-open'); lbImg.removeAttribute('src'); if (lastFocus) lastFocus.focus(); }
+document.getElementById('lbClose').onclick = closeLb;
+document.getElementById('lbPrev').onclick = () => showLb(cur - 1);
+document.getElementById('lbNext').onclick = () => showLb(cur + 1);
+lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+addEventListener('keydown', e => {
+  if (lb.hidden) return;
+  if (e.key === 'Escape') closeLb();
+  else if (e.key === 'ArrowRight') showLb(cur + 1);
+  else if (e.key === 'ArrowLeft') showLb(cur - 1);
+});
+let tx = null;
+lb.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, {passive:true});
+lb.addEventListener('touchend', e => {
+  if (tx === null) return;
+  const dx = e.changedTouches[0].clientX - tx; tx = null;
+  if (Math.abs(dx) > 40) showLb(cur + (dx < 0 ? 1 : -1));
+  else if (e.target === lbImg) showLb(cur + 1);
+});
+
+// Language switcher: keep the current section when switching
+document.querySelectorAll('.lang a').forEach(a => a.addEventListener('click', () => { a.href = a.getAttribute('href').split('#')[0] + location.hash; }));
+
+// Nav background + mobile CTA on scroll
+const nav = document.getElementById('nav'), mcta = document.getElementById('mcta'), book = document.getElementById('reserver');
+function onScroll(){
+  const y = window.scrollY;
+  nav.classList.toggle('solid', y > 60);
+  const r = book.getBoundingClientRect();
+  mcta.classList.toggle('show', y > window.innerHeight * .8 && r.top > window.innerHeight);
+}
+addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+// Reveal on scroll
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }), {threshold:.12});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// Dates: min today, depart after arrivee
+const arr = document.getElementById('arrivee'), dep = document.getElementById('depart');
+const today = new Date().toISOString().slice(0,10);
+arr.min = today; dep.min = today;
+arr.addEventListener('change', () => {
+  if (!arr.value) return;
+  const d = new Date(arr.value); d.setDate(d.getDate() + 1);
+  dep.min = d.toISOString().slice(0,10);
+  if (!dep.value || dep.value <= arr.value){ const w = new Date(arr.value); w.setDate(w.getDate() + 7); dep.value = w.toISOString().slice(0,10); }
+});
+
+// Submit via FormSubmit (AJAX)
+const form = document.getElementById('bookForm'), msg = document.getElementById('formMsg'), btn = document.getElementById('submitBtn');
+document.getElementById('mailLink').href = 'mailto:' + FORM_EMAIL;
+document.getElementById('mailLink').textContent = FORM_EMAIL;
+function show(type, text){ msg.className = 'msg ' + type; msg.textContent = text; }
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  if (!form.checkValidity()){ form.reportValidity(); return; }
+  if (dep.value <= arr.value){ show('err', 'The departure date must be after the arrival date.'); return; }
+  const data = Object.fromEntries(new FormData(form));
+  if (data._honey) return;
+  const nuits = Math.round((new Date(dep.value) - new Date(arr.value)) / 864e5);
+  const fmt = s => new Date(s).toLocaleDateString('fr-FR', {day:'numeric', month:'long', year:'numeric'});
+  const fmtEn = s => new Date(s).toLocaleDateString('en-GB', {day:'numeric', month:'long', year:'numeric'});
+  const payload = {
+    _subject: `Demande de réservation Cassiopée [EN] — ${fmt(arr.value)} → ${fmt(dep.value)} (${data['Prénom']} ${data['Nom']})`,
+    _template: 'table', _captcha: 'false', _replyto: data.email,
+    'Langue': 'Anglais', 'Prénom': data['Prénom'], 'Nom': data['Nom'], 'Email': data.email, 'Téléphone': data['Téléphone'] || '—',
+    'Arrivée': fmt(arr.value), 'Départ': fmt(dep.value), 'Nuits': nuits,
+    'Adultes': data['Adultes'], 'Enfants': data['Enfants'], 'Message': data['Message'] || '—'
+  };
+  btn.disabled = true; btn.textContent = 'Sending…';
+  try {
+    const res = await fetch('https://formsubmit.co/ajax/' + FORM_EMAIL, {
+      method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body: JSON.stringify(payload)
+    });
+    const j = await res.json().catch(() => ({}));
+    if (!res.ok || j.success === 'false' || j.success === false) throw new Error(j.message || 'Erreur');
+    form.querySelectorAll('input,select,textarea,button').forEach(el => el.disabled = true);
+    show('ok', `Thank you ${data['Prénom']}! Your request for ${nuits} night${nuits > 1 ? 's' : ''} (${fmtEn(arr.value)} → ${fmtEn(dep.value)}) has been sent. We'll get back to you very soon with availability and the rate.`);
+    btn.textContent = 'Request sent';
+  } catch (err) {
+    btn.disabled = false; btn.textContent = 'Send my request';
+    const body = Object.entries(payload).filter(([k]) => !k.startsWith('_')).map(([k,v]) => `${k} : ${v}`).join('\n');
+    msg.className = 'msg err';
+    msg.innerHTML = 'Your request could not be sent. <a href="mailto:' + FORM_EMAIL + '?subject=' + encodeURIComponent(payload._subject) + '&body=' + encodeURIComponent(body) + '">Click here to send it by email</a> (pre-filled).';
+  }
+});
+</script>
+</body>
+</html>
