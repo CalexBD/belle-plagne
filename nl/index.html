@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cassiopée · Belle Plagne — Appartement voor 6 personen met privésauna, direct aan de piste</title>
+<meta name="description" content="Gerenoveerd appartement van 65 m² in Belle Plagne (2050 m): 6 personen, 2 slaapkamers, 2 badkamers, privésauna, 3 balkons, overdekte parkeerplaats, op 20 m van de piste. Vraag uw data aan.">
+<meta property="og:title" content="Cassiopée · Uw alpine cocon in Belle Plagne">
+<meta property="og:description" content="65 m², 6 personen, privésauna, op 20 m van de piste. Vraag uw data aan.">
+<link rel="canonical" href="https://cocon-alpin.com/nl/">
+<meta property="og:url" content="https://cocon-alpin.com/nl/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:image" content="https://cocon-alpin.com/photos/01-salon-1.jpg">
+<link rel="alternate" hreflang="fr" href="https://cocon-alpin.com/">
+<link rel="alternate" hreflang="en" href="https://cocon-alpin.com/en/">
+<link rel="alternate" hreflang="de" href="https://cocon-alpin.com/de/">
+<link rel="alternate" hreflang="nl" href="https://cocon-alpin.com/nl/">
+<link rel="alternate" hreflang="x-default" href="https://cocon-alpin.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&family=Satisfy&display=swap" rel="stylesheet">
+<!--
+  ================================================================
+  CONFIGURATION RAPIDE
+  1) Email de réception des demandes : modifier FORM_EMAIL plus bas (script).
+     Le formulaire passe par FormSubmit (gratuit, sans serveur).
+     À la 1re demande, FormSubmit envoie un email d'activation à
+     cette adresse : cliquer sur le lien une fois, c'est tout.
+  2) Photos : dossier /photos (grand format ~2000 px) et /photos/mini
+     (vignettes ~800 px). Pour ajouter ou retirer une photo de la galerie,
+     modifier la liste PHOTOS dans le script en bas de page.
+  ================================================================
+-->
+<style>
+:root{
+  --navy:#172C3C; --navy-2:#1F3A4F; --ivory:#F5F1E8; --ivory-2:#EDE6D8;
+  --bronze:#B28A5A; --taupe:#756E65; --ink:#22313D; --white:#fff;
+  --serif:'Cormorant Garamond', Georgia, serif;
+  --sans:'Montserrat', system-ui, -apple-system, sans-serif;
+  --script:'Satisfy', cursive;
+  --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--ivory);color:var(--ink);font-family:var(--sans);font-weight:400;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;color:var(--navy);line-height:1.15}
+.eyebrow{font-family:var(--sans);font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--bronze);font-weight:600}
+h2.title{font-size:clamp(1.9rem,3.6vw,2.7rem);letter-spacing:.06em;text-transform:uppercase;margin:.4rem 0 1.2rem}
+.script{font-family:var(--script);font-weight:400;color:var(--bronze);font-size:1.6rem;line-height:1.3}
+.rule{width:56px;height:1px;background:var(--bronze);margin:1.2rem 0}
+section{padding:96px 0}
+
+/* Photo slots: real photo on top, labelled placeholder underneath */
+.ph{position:relative;overflow:hidden;background:linear-gradient(135deg,#2a4356,#172C3C 60%,#3b3a36);}
+.ph::before{content:attr(data-label);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:12px;color:rgba(255,255,255,.55);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+a.ph:hover img,.card:hover .ph img{transform:scale(1.04)}
+
+/* Buttons */
+.btn{display:inline-block;font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;padding:16px 30px;border:1px solid var(--bronze);background:var(--bronze);color:var(--white);cursor:pointer;transition:background .25s,color .25s}
+.btn:hover{background:transparent;color:var(--bronze)}
+.btn.ghost{background:transparent;color:var(--white);border-color:rgba(255,255,255,.7)}
+.btn.ghost:hover{background:var(--white);color:var(--navy)}
+
+/* Nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s,box-shadow .3s}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--white)}
+.brand svg{width:34px;height:20px}
+.brand b{white-space:nowrap;font-family:var(--serif);font-weight:500;font-size:1.35rem;letter-spacing:.14em}
+.brand small{display:block;font-size:.55rem;letter-spacing:.35em;opacity:.8;margin-top:-2px}
+.nav ul{display:flex;gap:30px;list-style:none;align-items:center}
+.nav ul a{color:var(--white);text-decoration:none;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;opacity:.9}
+.nav ul a:hover{opacity:1;color:var(--bronze)}
+.nav .btn{padding:11px 20px;font-size:.68rem}
+.nav.solid{background:rgba(23,44,60,.97);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+@media (max-width:860px){.nav ul li:not(:last-child):not(.lang){display:none}}
+@media (max-width:520px){.brand b{font-size:1.05rem}.nav .btn{padding:9px 12px;font-size:.6rem;letter-spacing:.14em}.facts li{font-size:.82rem}.facts .sub{letter-spacing:.16em}.facts .sub{font-size:0}.facts .sub span{font-size:.66rem}.hero-inner{padding-bottom:130px}}
+
+/* Hero */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;color:var(--white);padding:0}
+.hero .ph{position:absolute;inset:0}
+.hero .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(23,44,60,.62) 0%,rgba(23,44,60,.3) 45%,rgba(23,44,60,0) 70%),linear-gradient(180deg,rgba(23,44,60,.55) 0%,rgba(23,44,60,.05) 35%,rgba(23,44,60,.15) 55%,rgba(23,44,60,.85) 100%)}
+.hero-inner{position:relative;z-index:2;width:100%;padding-bottom:150px}
+.hero .script{color:#E9D6B8;font-size:clamp(2.2rem,5vw,3.6rem)}
+.hero h1{color:var(--white);white-space:nowrap;font-size:clamp(2.3rem,8vw,6rem);letter-spacing:.1em;text-transform:uppercase;font-weight:400;margin:.1em 0 .2em}
+.hero p.lead{font-family:var(--serif);font-size:clamp(1.15rem,2.2vw,1.5rem);letter-spacing:.14em;text-transform:uppercase;max-width:640px;opacity:.95}
+.hero .ctas{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+
+/* Facts band */
+.facts{position:relative;z-index:3;margin-top:-92px;padding:0}
+.facts .band{background:var(--navy);color:var(--white);box-shadow:0 30px 60px -30px rgba(0,0,0,.4)}
+.facts ul{list-style:none;display:grid;grid-template-columns:repeat(5,1fr)}
+.facts li{text-align:center;padding:28px 10px 22px;border-right:1px solid rgba(178,138,90,.35);font-size:.92rem}
+.facts li:last-child{border-right:0}
+.facts li svg{display:block;width:30px;height:30px;stroke:var(--bronze);fill:none;stroke-width:1.3;margin:0 auto 10px}
+.facts .sub{border-top:1px solid rgba(178,138,90,.35);text-align:center;padding:14px 10px;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:#E3D7C4}
+.facts .sub span{margin:0 14px;white-space:nowrap}
+@media (max-width:760px){.facts ul{grid-template-columns:repeat(3,1fr)}.facts li:nth-child(3){border-right:0}.facts li:nth-child(n+4){border-top:1px solid rgba(178,138,90,.35)}.facts .sub span{display:block;margin:4px 0}}
+
+/* Intro */
+.intro .grid{display:grid;grid-template-columns:1.05fr 1fr;gap:72px;align-items:center}
+.intro .tag{font-family:var(--serif);font-size:1.45rem;color:var(--navy);margin-bottom:1rem;line-height:1.35}
+.intro p{color:var(--taupe);margin-bottom:1rem;max-width:520px}
+.intro p.strong{color:var(--navy);font-weight:500}
+.intro .ph{aspect-ratio:4/5}
+@media (max-width:860px){.intro .grid{grid-template-columns:1fr;gap:40px}.intro .ph{aspect-ratio:4/3}}
+
+/* Why */
+.why{background:var(--white);}
+.why .grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:46px}
+.why .item{padding:6px 26px;border-left:1px solid var(--ivory-2)}
+.why .item:first-child{border-left:0;padding-left:0}
+.why svg{display:block;width:34px;height:34px;stroke:var(--bronze);fill:none;stroke-width:1.2;margin-bottom:18px}
+.why h3{font-family:var(--sans);font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px;line-height:1.45}
+.why p{font-size:.88rem;color:var(--taupe)}
+.why .script{font-size:clamp(1.7rem,3vw,2.3rem);color:#8F6A3E;margin:52px auto 0;text-align:center;max-width:900px;line-height:1.35;text-wrap:balance}
+@media (max-width:980px){.why .grid{grid-template-columns:repeat(2,1fr);gap:36px}.why .item,.why .item:first-child{border-left:0;padding:0}}
+@media (max-width:540px){.why .grid{grid-template-columns:1fr}}
+
+/* Rooms */
+.rooms .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:40px}
+@media (max-width:1100px){.rooms .grid{grid-template-columns:repeat(3,1fr)}}
+.card .ph{aspect-ratio:4/3;margin-bottom:18px}
+.card h3{font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--bronze);margin-bottom:4px}
+.card .spec{font-size:.82rem;font-weight:600;color:var(--navy);margin-bottom:6px}
+.card p{font-size:.9rem;color:var(--taupe)}
+@media (max-width:900px){.rooms .grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.rooms .grid{grid-template-columns:1fr}}
+
+/* Apres-ski banner */
+.apres{position:relative;padding:0;color:var(--white)}
+.apres .ph{position:absolute;inset:0}
+.apres .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(23,44,60,.92) 0%,rgba(23,44,60,.7) 45%,rgba(23,44,60,.2) 100%)}
+.apres .inner{position:relative;z-index:2;padding:110px 0}
+.apres h2{color:var(--white)}
+.apres ul{list-style:none;display:grid;grid-template-columns:repeat(4,auto);gap:34px;justify-content:start;margin-top:30px}
+.apres li{text-align:center;font-size:.85rem;max-width:140px}
+.apres li svg{display:block;width:34px;height:34px;stroke:var(--bronze);fill:none;stroke-width:1.2;margin:0 auto 10px}
+.apres .script{color:#E9D6B8;font-size:2rem;margin-top:40px}
+@media (max-width:700px){.apres ul{grid-template-columns:repeat(2,1fr)}}
+
+/* Location */
+.loc .grid{display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:center}
+.loc .ph{aspect-ratio:5/4}
+.loc .meta{font-size:.95rem;color:var(--navy);letter-spacing:.08em;margin-bottom:1.2rem}
+.loc .meta span{color:var(--bronze);margin:0 10px}
+.loc p{color:var(--taupe);margin-bottom:1.4rem}
+.loc ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:16px 28px}
+.loc li{display:flex;align-items:center;gap:14px;font-size:.92rem}
+.loc li svg{width:26px;height:26px;stroke:var(--bronze);fill:none;stroke-width:1.3;flex:none}
+.loc .note{font-style:italic;font-size:.85rem;margin-top:1.4rem}
+@media (max-width:860px){.loc .grid{grid-template-columns:1fr;gap:40px}}
+
+/* Included */
+.incl{background:var(--ivory-2)}
+.incl .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 40px;margin-top:36px;list-style:none}
+.incl li{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid rgba(117,110,101,.18);font-size:.95rem}
+.incl li svg{width:18px;height:18px;stroke:var(--bronze);fill:none;stroke-width:1.8;flex:none}
+@media (max-width:860px){.incl .grid{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.incl .grid{grid-template-columns:1fr}}
+
+/* Booking */
+.book{background:var(--navy);color:var(--white)}
+.book .grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:72px}
+.book h2{color:var(--white)}
+.book .intro-txt{color:#D9D2C5;margin-bottom:1.6rem}
+.book .steps{list-style:none;counter-reset:s;margin-top:10px}
+.book .steps li{counter-increment:s;display:flex;gap:16px;margin-bottom:18px;font-size:.92rem;color:#E3DDD2}
+.book .steps li::before{content:counter(s);flex:none;width:30px;height:30px;border:1px solid var(--bronze);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.05rem;color:var(--bronze)}
+.book .sat{display:flex;gap:14px;align-items:center;margin-top:26px;padding:14px 18px;border:1px solid rgba(178,138,90,.5);background:rgba(178,138,90,.08);font-size:.9rem;color:#F1EBE0}
+.book .sat svg{width:26px;height:26px;flex:none;stroke:var(--bronze);fill:none;stroke-width:1.5}
+.book .sat strong{color:#E9D6B8;font-weight:600}
+select:disabled{color:var(--taupe);background:#F3EFE7;cursor:not-allowed}
+.book .mail{margin-top:28px;font-size:.88rem;color:#D9D2C5}
+.book .mail a{color:var(--white)}
+form{background:var(--ivory);color:var(--ink);padding:40px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{margin-bottom:18px}
+label{display:block;font-size:.66rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--navy);margin-bottom:7px}
+label .opt{font-weight:400;color:var(--taupe);letter-spacing:.05em;text-transform:none}
+input,select,textarea{width:100%;font:inherit;font-size:.95rem;color:var(--ink);background:var(--white);border:1px solid #D9D1C2;padding:12px 14px;border-radius:0;outline:none;transition:border-color .2s}
+input:focus,select:focus,textarea:focus{border-color:var(--bronze)}
+textarea{min-height:110px;resize:vertical}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:.8rem;font-weight:400;letter-spacing:0;text-transform:none;color:var(--taupe);margin:4px 0 22px}
+.check input{width:auto;margin-top:4px}
+form .btn{width:100%}
+.hp{position:absolute;left:-9999px}
+.msg{display:none;padding:16px 18px;margin-top:16px;font-size:.9rem}
+.msg.ok{display:block;background:#E6EEE5;color:#2E4A33}
+.msg.err{display:block;background:#F5E3DF;color:#7A2E22}
+@media (max-width:900px){.book .grid{grid-template-columns:1fr;gap:44px}}
+@media (max-width:520px){.row{grid-template-columns:1fr;gap:0}form{padding:26px 20px}}
+
+/* Footer */
+footer{background:#10202D;color:#B9B2A6;padding:46px 0;font-size:.8rem}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+footer .script{font-size:1.5rem}
+
+/* Sticky mobile CTA */
+.mcta{display:none}
+@media (max-width:860px){
+  .mcta{display:block;position:fixed;bottom:0;left:0;right:0;z-index:60;padding:12px 16px;background:rgba(23,44,60,.97);transform:translateY(100%);transition:transform .3s}
+  .mcta.show{transform:none}
+  .mcta .btn{width:100%;text-align:center}
+  section{padding:72px 0}
+}
+
+/* Room cards open the gallery */
+.card[data-open]{cursor:pointer;outline:none}
+.card[data-open]:focus-visible .ph{box-shadow:0 0 0 2px var(--bronze)}
+.card .count{position:absolute;right:10px;bottom:10px;z-index:2;background:rgba(23,44,60,.82);color:#fff;font-size:.62rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:6px 10px}
+.card .count:empty{display:none}
+
+/* Gallery */
+.gallery{background:var(--white)}
+.gal-intro{color:var(--taupe);font-size:.9rem;margin-bottom:34px}
+.masonry{columns:4 240px;column-gap:14px}
+.masonry button{all:unset;display:block;position:relative;width:100%;margin:0 0 14px;break-inside:avoid;cursor:pointer;overflow:hidden;background:var(--ivory-2)}
+.masonry img{width:100%;height:auto;transition:transform .7s ease,opacity .3s}
+.masonry button:hover img{transform:scale(1.035)}
+.masonry button:focus-visible{outline:2px solid var(--bronze);outline-offset:2px}
+.masonry .cap{position:absolute;left:0;right:0;bottom:0;padding:22px 12px 10px;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:linear-gradient(transparent,rgba(23,44,60,.8));opacity:0;transition:opacity .3s}
+.masonry button:hover .cap,.masonry button:focus-visible .cap{opacity:1}
+@media (hover:none){.masonry .cap{opacity:1}}
+.masonry .plan img{background:#fff;padding:10px}
+
+/* Lightbox */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(14,26,36,.97);display:flex;align-items:center;justify-content:center}
+.lb[hidden]{display:none}
+.lb figure{margin:0;max-width:92vw;display:flex;flex-direction:column;align-items:center}
+.lb img{max-width:92vw;max-height:84vh;width:auto;height:auto;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.5);user-select:none;-webkit-user-drag:none}
+.lb figcaption{display:flex;gap:18px;justify-content:space-between;width:100%;margin-top:14px;color:#E3D7C4;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase}
+.lb figcaption #lbNum{color:var(--bronze);white-space:nowrap}
+.lb button{background:none;border:0;color:#fff;cursor:pointer;font-family:var(--serif);line-height:1;opacity:.75;transition:opacity .2s}
+.lb button:hover,.lb button:focus-visible{opacity:1;outline:none}
+.lb-x{position:absolute;top:14px;right:20px;font-size:2.6rem}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);font-size:4rem;padding:20px}
+.lb-nav.prev{left:6px}.lb-nav.next{right:6px}
+@media (max-width:700px){.lb-nav{display:none}.lb img{max-height:78vh}}
+body.lb-open{overflow:hidden}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
+
+/* Language switcher */
+.nav .lang{display:flex;align-items:center;gap:7px;font-size:.72rem;letter-spacing:.2em;color:rgba(255,255,255,.45)}
+.nav .lang a{text-decoration:none;opacity:.6;padding:4px 0;border-bottom:1px solid transparent}
+.nav .lang a:hover{opacity:1;color:var(--white)}
+.nav .lang a[aria-current]{opacity:1;color:var(--white);border-bottom-color:var(--bronze)}
+@media (max-width:520px){.nav .wrap{padding:0 16px;gap:12px}.brand svg{display:none}.nav ul{gap:12px}.nav .lang{font-size:.64rem;letter-spacing:.14em;gap:5px}.nav .btn{white-space:nowrap}}
+@media (max-width:380px){.nav .btn{padding:9px 9px;letter-spacing:.08em}.nav ul{gap:10px}.brand b{font-size:.98rem}}
+/* Language switcher: inline on desktop, dropdown on small screens */
+.nav .lang-list{display:flex;align-items:center;gap:7px}
+.nav .lang-cur{display:none;align-items:center;gap:6px;background:none;border:0;color:var(--white);font:inherit;font-size:.72rem;letter-spacing:.2em;cursor:pointer;padding:6px 0}
+.nav .lang-cur svg{width:9px;height:6px;fill:none;stroke:var(--bronze);stroke-width:1.6;transition:transform .2s}
+@media (max-width:600px){
+  .nav .lang{position:relative}
+  .nav .lang-cur{display:flex}
+  .nav .lang-list{display:none;position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%);flex-direction:column;gap:0;background:rgba(23,44,60,.98);border:1px solid rgba(178,138,90,.4);padding:6px 0;min-width:64px;box-shadow:0 12px 30px rgba(0,0,0,.3)}
+  .nav .lang.open .lang-list{display:flex}
+  .nav .lang.open .lang-cur svg{transform:rotate(180deg)}
+  .nav .lang-list span{display:none}
+  .nav .lang-list a{opacity:.8;padding:9px 18px;border:0;text-align:center}
+  .nav .lang-list a[aria-current]{color:var(--bronze);opacity:1}
+}
+</style>
+</head>
+<body>
+
+<!-- Icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-mtn" viewBox="0 0 32 32"><path d="M2 26 12 9l5 8 3-4 10 13Z"/><path d="m9.5 13.5 2.5 2 2-2.5"/></symbol>
+  <symbol id="i-people" viewBox="0 0 32 32"><circle cx="12" cy="10" r="4.5"/><path d="M3.5 26c0-5 3.8-8.5 8.5-8.5s8.5 3.5 8.5 8.5"/><circle cx="22.5" cy="11.5" r="3.5"/><path d="M21 18.2c4.4-.6 8 2.4 8 7.3"/></symbol>
+  <symbol id="i-bed" viewBox="0 0 32 32"><path d="M3 24V8M3 19h26v5M29 19v-4a3 3 0 0 0-3-3H14v7"/><rect x="6" y="13" width="6" height="4" rx="1.5"/></symbol>
+  <symbol id="i-shower" viewBox="0 0 32 32"><path d="M7 28V9a5 5 0 0 1 10 0"/><path d="M13 13h8a4 4 0 0 0-8 0Z"/><path d="M15 17v1.5M17 17.5l.5 1.5M19 17v1.5"/><path d="M24 28h4"/></symbol>
+  <symbol id="i-sauna" viewBox="0 0 32 32"><path d="M4 28h24M7 28V18h18v10M7 22h18"/><path d="M12 14c-1-2 1-3 0-5M16 14c-1-2 1-3 0-5M20 14c-1-2 1-3 0-5"/></symbol>
+  <symbol id="i-ski" viewBox="0 0 32 32"><circle cx="20" cy="6" r="2.5"/><path d="m4 22 24 8M11 13l6-3 3 5-5 4 3 6"/><path d="m8 24 4-8"/></symbol>
+  <symbol id="i-spa" viewBox="0 0 32 32"><path d="M16 27c-6 0-11-4-11-9 4 0 8 2 11 6 3-4 7-6 11-6 0 5-5 9-11 9Z"/><path d="M16 24c-3-3-4-7-3-12 1.5 1 2.5 2.4 3 4 .5-1.6 1.5-3 3-4 1 5 0 9-3 12Z"/></symbol>
+  <symbol id="i-home" viewBox="0 0 32 32"><path d="M4 15 16 5l12 10M7 13v14h18V13"/><path d="M13 27v-8h6v8"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 32 32"><path d="M4 24h24M9 24a7 7 0 0 1 14 0"/><path d="M16 9V5M7 13l-3-2.5M25 13l3-2.5M11 10 9.5 6.5M21 10l1.5-3.5"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 32 32"><rect x="5" y="11" width="22" height="16" rx="2"/><path d="M11 11V8a5 5 0 0 1 10 0v3"/></symbol>
+  <symbol id="i-tv" viewBox="0 0 32 32"><rect x="3" y="7" width="26" height="16" rx="1.5"/><path d="M11 27h10M16 23v4"/><path d="m14 12 5 3-5 3Z"/></symbol>
+  <symbol id="i-pot" viewBox="0 0 32 32"><path d="M5 15h22v6a6 6 0 0 1-6 6H11a6 6 0 0 1-6-6Z"/><path d="M3 15h26M12 11c-1-2 1-3 0-5M17 11c-1-2 1-3 0-5"/></symbol>
+  <symbol id="i-fork" viewBox="0 0 32 32"><path d="M10 4v8a3 3 0 0 0 6 0V4M13 4v24"/><path d="M22 28V4c3 2 4 6 4 10h-4"/></symbol>
+  <symbol id="i-bread" viewBox="0 0 32 32"><path d="M6 22c-3-3-2-8 3-11s12-6 16-3 3 9-2 12-14 5-17 2Z"/><path d="m11 13 3 5M16 10.5l3 5M21 8.5l2.5 4.5"/></symbol>
+  <symbol id="i-shop" viewBox="0 0 32 32"><path d="M5 12 7 5h18l2 7M5 12v15h22V12M5 12c0 2 1.5 3 3.5 3s3.5-1 3.5-3c0 2 1.5 3 4 3s4-1 4-3c0 2 1.5 3 3.5 3S27 14 27 12"/><path d="M13 27v-7h6v7"/></symbol>
+  <symbol id="i-boot" viewBox="0 0 32 32"><path d="M10 4h8v11l7 4c2 1 3 3 3 5v2H8V8"/><path d="M8 22h20"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 32 32"><rect x="4" y="7" width="24" height="21" rx="2"/><path d="M4 13h24M10 4v6M22 4v6"/><path d="m12 20 3 3 6-6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9"/></symbol>
+</svg>
+
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Cassiopée — home">
+      <svg viewBox="0 0 34 20" fill="none" stroke="#B28A5A" stroke-width="1.4"><path d="M1 19 12 3l6 9 4-5 11 12"/></svg>
+      <span><b>CASSIOPÉE</b><small>BELLE PLAGNE</small></span>
+    </a>
+    <ul>
+      <li><a href="#appartement">Het appartement</a></li>
+      <li><a href="#confort">Comfort</a></li>
+      <li><a href="#photos">Foto's</a></li>
+      <li><a href="#station">Het skidorp</a></li>
+      <li><a href="#inclus">Inbegrepen</a></li>
+      <li class="lang"><button type="button" class="lang-cur" aria-expanded="false" aria-label="Langue / Language">NL<svg viewBox="0 0 10 6" aria-hidden="true"><path d="m1 1 4 4 4-4"/></svg></button><div class="lang-list"><a href="/" lang="fr" hreflang="fr" aria-label="Version française">FR</a><span>·</span><a href="/en/" lang="en" hreflang="en" aria-label="English version">EN</a><span>·</span><a href="/de/" lang="de" hreflang="de" aria-label="Deutsche Version">DE</a><span>·</span><a href="/nl/" lang="nl" hreflang="nl" aria-label="Nederlandse versie" aria-current="page">NL</a></div></li>
+      <li><a class="btn" href="#reserver">Nu aanvragen</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="ph" data-label="De woonkamer"><img src="../photos/01-salon-1.jpg" alt="De lichte woonkamer van Cassiopée, met uitzicht op de bergtoppen" onerror="this.remove()" fetchpriority="high"></div>
+  <div class="wrap hero-inner">
+    <div class="script">Uw alpine cocon</div>
+    <h1>Cassiopée</h1>
+    <p class="lead">Met privésauna, aan de voet van de pistes van Belle Plagne</p>
+    <div class="ctas">
+      <a class="btn" href="#reserver">Nu aanvragen</a>
+      <a class="btn ghost" href="#confort">Ontdek het appartement</a>
+    </div>
+  </div>
+</header>
+
+<div class="facts wrap">
+  <div class="band">
+    <ul>
+      <li><svg><use href="#i-mtn"/></svg>65 m²</li>
+      <li><svg><use href="#i-people"/></svg>6 personen</li>
+      <li><svg><use href="#i-bed"/></svg>2 slaapkamers</li>
+      <li><svg><use href="#i-shower"/></svg>2 badkamers</li>
+      <li><svg><use href="#i-sauna"/></svg>Privésauna</li>
+    </ul>
+    <div class="sub"><span>Op 20 meter van de pistes</span>·<span>3 balkons</span>·<span>Overdekte parkeerplaats inbegrepen</span></div>
+  </div>
+</div>
+
+<section class="intro" id="appartement">
+  <div class="wrap grid">
+    <div class="reveal">
+      <div class="eyebrow">Het appartement</div>
+      <h2 class="title">Een week skiën,<br>zonder in te leveren op comfort</h2>
+      <p class="tag">Er zijn appartementen waar je slaapt.<br>En dan is er dit appartement.</p>
+      <p>Op 2050 meter hoogte, in het hart van Belle Plagne, is Cassiopée volledig gerenoveerd, zodat het skiplezier binnen gewoon doorgaat.</p>
+      <p>’s Ochtends staat u in een paar stappen op de piste. ’s Middags skiet u (bijna) tot aan de deur terug. ’s Avonds geniet u van uw privésauna, een gezellig diner en het laatste licht op de bergtoppen vanaf de balkons.</p>
+      <p class="strong">Alles is aanwezig om volop van de bergen te genieten — zonder auto, zonder gedoe en met het comfort van een appartement dat helemaal op vakantie is ingericht.</p>
+    </div>
+    <div class="ph reveal" data-label="Zonsondergang vanaf het balkon"><img src="../photos/02-sunset-balcon-1.jpg" alt="Zonsondergang boven de bergtoppen, vanaf het balkon" loading="lazy" onerror="this.remove()"></div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="eyebrow">Waarom u het hier geweldig zult vinden</div>
+    <div class="grid">
+      <div class="item reveal"><svg><use href="#i-ski"/></svg><h3>Zorgeloos skiën</h3><p>Pistes en skischolen op 20 m. Skiverhuur, winkels en restaurants aan de voet van de residentie.</p></div>
+      <div class="item reveal"><svg><use href="#i-spa"/></svg><h3>Uw eigen spa na het skiën</h3><p>De privésauna bevindt zich in het appartement zelf, voor een moment van echte ontspanning.</p></div>
+      <div class="item reveal"><svg><use href="#i-home"/></svg><h3>Al het comfort van een chalet</h3><p>65 m² met veel hout, twee ruime slaapkamers en twee badkamers: plaats voor zes, met de sfeer van een chalet aan de voet van de pistes.</p></div>
+      <div class="item reveal"><svg><use href="#i-sun"/></svg><h3>De dag afsluiten met zicht op de toppen</h3><p>Drie balkons om te genieten van het panorama en het laatste licht van de dag.</p></div>
+      <div class="item reveal"><svg><use href="#i-bag"/></svg><h3>Aan alles is gedacht</h3><p>Overdekte parkeerplaats, verwarmd skikluisje, bedlinnen en handdoeken, schoonmaak inbegrepen, glasvezel-wifi.</p></div>
+    </div>
+    <p class="script">U parkeert de auto bij aankomst… en vergeet hem de rest van de week.</p>
+  </div>
+</section>
+
+<section class="rooms" id="confort">
+  <div class="wrap">
+    <div class="eyebrow">Comfort tot in detail</div>
+    <h2 class="title">Elke ruimte ingericht op de après-ski</h2>
+    <div class="grid">
+      <article class="card reveal" data-open="chambre-principale" tabindex="0" role="button" aria-label="Foto's bekijken: Hoofdslaapkamer">
+        <div class="ph" data-label="Hoofdslaapkamer"><img src="../photos/mini/03-chambre-principale-1.jpg" alt="Hoofdslaapkamer met tweepersoonsbed en houten hoofdeinde" loading="lazy" onerror="this.remove()"><span class="count" data-count="chambre-principale"></span></div>
+        <h3>Hoofdslaapkamer</h3><div class="spec">Tweepersoonsbed 160 × 200 cm</div>
+        <p>Een echte tweepersoonskamer, een plek om tot rust te komen na een dag in de bergen.</p>
+      </article>
+      <article class="card reveal" data-open="chambre-modulable" tabindex="0" role="button" aria-label="Foto's bekijken: Flexibele slaapkamer">
+        <div class="ph" data-label="Flexibele slaapkamer"><img src="../photos/mini/04-chambre-modulable-2.jpg" alt="Flexibele slaapkamer, groot bed" loading="lazy" onerror="this.remove()"><span class="count" data-count="chambre-modulable"></span></div>
+        <h3>Flexibele slaapkamer</h3><div class="spec">2 × 90 × 200 cm → 180 × 200 cm</div>
+        <p>Twee eenpersoonsbedden die samen een groot kingsize bed vormen. Eigen badkamer.</p>
+      </article>
+      <article class="card reveal" data-open="sejour" tabindex="0" role="button" aria-label="Foto's bekijken: De woonkamer">
+        <div class="ph" data-label="De woonkamer"><img src="../photos/mini/01-salon-2.jpg" alt="De woonkamer met hoekbank" loading="lazy" onerror="this.remove()"><span class="count" data-count="sejour"></span></div>
+        <h3>De woonkamer</h3><div class="spec">Slaapbank 160 × 200 cm</div>
+        <p>Groot scherm, home cinema en soundbar: een echte woonkamer om na het skiën samen te zijn.</p>
+      </article>
+      <article class="card reveal" data-open="repas" tabindex="0" role="button" aria-label="Foto's bekijken: Eethoek">
+        <div class="ph" data-label="Eethoek"><img src="../photos/mini/05-sejour-1.jpg" alt="De gedekte tafel voor zes" loading="lazy" onerror="this.remove()"><span class="count" data-count="repas"></span></div>
+        <h3>Eethoek</h3><div class="spec">Een tafel voor zes</div>
+        <p>Raclette, fondue en lange diners: de tafel staat open naar de keuken en de woonkamer.</p>
+      </article>
+      <article class="card reveal" data-open="sauna" tabindex="0" role="button" aria-label="Foto's bekijken: Privésauna">
+        <div class="ph" data-label="Privésauna"><img src="../photos/mini/06-sauna.jpg" alt="De privésauna" loading="lazy" onerror="this.remove()"><span class="count" data-count="sauna"></span></div>
+        <h3>Privésauna</h3><div class="spec">In het appartement</div>
+        <p>Geniet na een dag op de piste in alle rust van uw sauna, zonder het appartement te verlaten.</p>
+      </article>
+      <article class="card reveal" data-open="cuisine" tabindex="0" role="button" aria-label="Foto's bekijken: Volledig uitgeruste keuken">
+        <div class="ph" data-label="Volledig uitgeruste keuken"><img src="../photos/mini/07-cuisine.jpg" alt="Volledig uitgeruste keuken" loading="lazy" onerror="this.remove()"><span class="count" data-count="cuisine"></span></div>
+        <h3>Volledig uitgeruste keuken</h3><div class="spec">Alles om te koken zoals thuis</div>
+        <p>Oven, magnetron, inductiekookplaat, vaatwasser, Nespresso.</p>
+      </article>
+      <article class="card reveal" data-open="salles-d-eau" tabindex="0" role="button" aria-label="Foto's bekijken: Twee badkamers">
+        <div class="ph" data-label="Twee badkamers"><img src="../photos/mini/14-salle-d-eau-chambre-separee-2.jpg" alt="Badkamer met wastafel en toilet" loading="lazy" onerror="this.remove()"><span class="count" data-count="salles-d-eau"></span></div>
+        <h3>Twee badkamers</h3><div class="spec">Douche, wastafel & handdoekradiator</div>
+        <p>Een eigen badkamer bij de flexibele slaapkamer en een tweede voor de rest van het appartement: ’s ochtends niet meer wachten.</p>
+      </article>
+      <article class="card reveal" data-open="entree" tabindex="0" role="button" aria-label="Foto's bekijken: De hal">
+        <div class="ph" data-label="De hal"><img src="../photos/mini/15-entree-1.jpg" alt="De hal met bankje, kapstok en planken" loading="lazy" onerror="this.remove()"><span class="count" data-count="entree"></span></div>
+        <h3>De hal</h3><div class="spec">Bankje, kapstok &amp; opbergruimte</div>
+        <p>Plek voor jassen, mutsen en schoenen meteen bij binnenkomst, zonder dat het appartement vol komt te liggen.</p>
+      </article>
+      <article class="card reveal" data-open="teletravail" tabindex="0" role="button" aria-label="Foto's bekijken: Thuiswerkplek">
+        <div class="ph" data-label="Thuiswerkplek"><img src="../photos/mini/12-bureau-teletravail.jpg" alt="Bureau voor het raam om thuis te werken" loading="lazy" onerror="this.remove()"><span class="count" data-count="teletravail"></span></div>
+        <h3>Thuiswerkplek</h3><div class="spec">Verplaatsbare bureaus &amp; glasvezel-wifi</div>
+        <p>Een paar uur online werken? Zet een echte werkplek op en ruim die daarna weer op voor meer ruimte.</p>
+      </article>
+      <article class="card reveal" data-open="balcons" tabindex="0" role="button" aria-label="Foto's bekijken: De 3 balkons">
+        <div class="ph" data-label="De 3 balkons"><img src="../photos/mini/08-balcons-2.jpg" alt="Balkon met tafel en uitzicht op het skidorp" loading="lazy" onerror="this.remove()"><span class="count" data-count="balcons"></span></div>
+        <h3>De 3 balkons</h3><div class="spec">Uitzicht op de bergtoppen</div>
+        <p>Een koffie met uitzicht op de bergen, een drankje in het avondlicht: geniet van het zicht op de toppen.</p>
+      </article>
+      <article class="card reveal" data-open="machine" tabindex="0" role="button" aria-label="Foto's bekijken: Wasmachine">
+        <div class="ph" data-label="Wasmachine"><img src="../photos/mini/11-machine-a-laver-2.jpg" alt="Wasmachine in het appartement" loading="lazy" onerror="this.remove()"><span class="count" data-count="machine"></span></div>
+        <h3>Wasmachine</h3><div class="spec">In het appartement, tot uw beschikking</div>
+        <p>Skikleding, thermokleding, kinderkleren: was ter plaatse en reis lichter. Geen wasserette nodig.</p>
+      </article>
+      <article class="card reveal" data-open="casier" tabindex="0" role="button" aria-label="Foto's bekijken: Skikluisje">
+        <div class="ph" data-label="Skikluisje"><img src="../photos/mini/16-casier-ski.jpg" alt="Verwarmd skikluisje" loading="lazy" onerror="this.remove()"><span class="count" data-count="casier"></span></div>
+        <h3>Skikluisje</h3><div class="spec">Verwarmd, aan de voet van de pistes</div>
+        <p>Ski’s en schoenen blijven droog en warm: elke ochtend vertrekt u met droge skischoenen.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="photos">
+  <div class="wrap">
+    <div class="eyebrow">In beeld</div>
+    <h2 class="title">Alle foto's</h2>
+    <p class="gal-intro">Tik op een foto om hem groot te bekijken en blader dan verder.</p>
+    <div class="masonry" id="masonry"></div>
+  </div>
+</section>
+
+<section class="apres">
+  <div class="ph" data-label="Après-skisfeer"><img src="../photos/10-apres-ski.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+  <div class="wrap inner reveal">
+    <div class="eyebrow">Hier begint de après-ski</div>
+    <h2 class="title">Meer dan een appartement,<br>een belevenis om te delen</h2>
+    <ul>
+      <li><svg><use href="#i-sauna"/></svg>Privésauna</li>
+      <li><svg><use href="#i-tv"/></svg>Home cinema &amp; soundbar</li>
+      <li><svg><use href="#i-pot"/></svg>Raclette &amp; samen tafelen</li>
+      <li><svg><use href="#i-sun"/></svg>Balkons &amp; bergzicht</li>
+    </ul>
+  </div>
+</section>
+
+<section class="loc" id="station">
+  <div class="wrap grid">
+    <div class="ph reveal" data-label="Belle Plagne"><img src="../photos/09-belle-plagne-2.jpg" alt="Belle Plagne en de gondelbaan, gezien vanaf de alpenweiden" loading="lazy" onerror="this.remove()"></div>
+    <div class="reveal">
+      <div class="eyebrow">Het skidorp</div>
+      <h2 class="title">Belle Plagne voor de deur</h2>
+      <div class="meta">2050 m hoogte<span>·</span>Paradiski<span>·</span>425 km pistes</div>
+      <p>Cassiopée ligt in het hart van Belle Plagne, op een bijzonder handige plek. Op een paar stappen afstand:</p>
+      <ul>
+        <li><svg><use href="#i-ski"/></svg>Pistes &amp; skischolen</li>
+        <li><svg><use href="#i-fork"/></svg>Restaurants</li>
+        <li><svg><use href="#i-bread"/></svg>Bakker</li>
+        <li><svg><use href="#i-boot"/></svg>Skiverhuur</li>
+        <li><svg><use href="#i-shop"/></svg>Supermarkt</li>
+        <li><svg><use href="#i-spa"/></svg>Spa</li>
+      </ul>
+      <p class="note">De residentie is volledig gerenoveerd en ligt centraal.</p>
+    </div>
+  </div>
+</section>
+
+<section class="incl" id="inclus">
+  <div class="wrap">
+    <div class="eyebrow">Alles inbegrepen</div>
+    <h2 class="title">U neemt uw koffers mee.<br>Voor de rest is al gezorgd.</h2>
+    <ul class="grid">
+      <li><svg><use href="#i-check"/></svg>65 m², 6 slaapplaatsen</li>
+      <li><svg><use href="#i-check"/></svg>2 slaapkamers, 2 badkamers</li>
+      <li><svg><use href="#i-check"/></svg>Privésauna</li>
+      <li><svg><use href="#i-check"/></svg>3 balkons</li>
+      <li><svg><use href="#i-check"/></svg>Overdekte parkeerplaats</li>
+      <li><svg><use href="#i-check"/></svg>Verwarmd skikluisje</li>
+      <li><svg><use href="#i-check"/></svg>Bedlinnen &amp; handdoeken</li>
+      <li><svg><use href="#i-check"/></svg>Schoonmaak inbegrepen</li>
+      <li><svg><use href="#i-check"/></svg>Glasvezel-wifi</li>
+      <li><svg><use href="#i-check"/></svg>Volledig uitgeruste keuken &amp; Nespresso</li>
+      <li><svg><use href="#i-check"/></svg>Wasmachine in het appartement</li>
+      <li><svg><use href="#i-check"/></svg>Verplaatsbare bureaus om thuis te werken</li>
+      <li><svg><use href="#i-check"/></svg>3 tv's, home cinema &amp; soundbar</li>
+      <li><svg><use href="#i-check"/></svg>Babybedje op aanvraag</li>
+    </ul>
+  </div>
+</section>
+
+<section class="book" id="reserver">
+  <div class="wrap grid">
+    <div class="reveal">
+      <div class="eyebrow">Uw week in Belle Plagne</div>
+      <h2 class="title">Uw data aanvragen</h2>
+      <p class="intro-txt">Laat ons uw data en het aantal reizigers weten: wij laten u de beschikbaarheid en de prijs weten.</p>
+      <ol class="steps">
+        <li>U stuurt uw aanvraag, vrijblijvend.</li>
+        <li>Wij bevestigen de beschikbaarheid en de prijs voor uw data.</li>
+        <li>U rondt de boeking af en hoeft alleen nog de ski’s in te pakken.</li>
+      </ol>
+      <p class="sat"><svg><use href="#i-cal"/></svg><span>Verblijf van zaterdag tot zaterdag: aankomst en vertrek zijn <strong>alleen op zaterdag</strong>.</span></p>
+      <p class="mail">Liever direct mailen? We antwoorden graag in het Engels of Frans.<br><a id="mailLink" href="mailto:coconalpin.laplagne@gmail.com">coconalpin.laplagne@gmail.com</a></p>
+    </div>
+
+    <form id="bookForm" class="reveal" novalidate>
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="row">
+        <div class="field"><label for="prenom">Voornaam</label><input id="prenom" name="Prénom" required autocomplete="given-name"></div>
+        <div class="field"><label for="nom">Achternaam</label><input id="nom" name="Nom" required autocomplete="family-name"></div>
+      </div>
+      <div class="row">
+        <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+        <div class="field"><label for="tel">Telefoon <span class="opt">(optioneel)</span></label><input id="tel" name="Téléphone" type="tel" autocomplete="tel"></div>
+      </div>
+      <div class="row">
+        <div class="field"><label for="arrivee">Aankomst <span class="opt">(zaterdag)</span></label><select id="arrivee" name="Arrivée" required><option value="">Kies een zaterdag</option></select></div>
+        <div class="field"><label for="depart">Vertrek <span class="opt">(zaterdag)</span></label><select id="depart" name="Départ" required></select></div>
+      </div>
+      <div class="row">
+        <div class="field"><label for="adultes">Volwassenen</label>
+          <select id="adultes" name="Adultes" required><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></div>
+        <div class="field"><label for="enfants">Kinderen <span class="opt">(onder 12)</span></label>
+          <select id="enfants" name="Enfants"><option selected>0</option><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
+      </div>
+      <div class="field"><label for="message">Bericht <span class="opt">(optioneel)</span></label>
+        <textarea id="message" name="Message" placeholder="Flexibele data, babybedje, vragen…"></textarea></div>
+      <label class="check"><input type="checkbox" id="rgpd" required> Ik ga ermee akkoord dat mijn gegevens uitsluitend worden gebruikt om mijn boekingsaanvraag te behandelen.</label>
+      <button class="btn" type="submit" id="submitBtn">Aanvraag versturen</button>
+      <div class="msg" id="formMsg" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><span class="script">Tot snel in Belle Plagne!</span></div>
+    <div>Cassiopée · Belle Plagne, 73210 La Plagne Tarentaise</div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto’s van het appartement" hidden>
+  <button class="lb-x" id="lbClose" aria-label="Sluiten">&times;</button>
+  <button class="lb-nav prev" id="lbPrev" aria-label="Vorige foto">&#8249;</button>
+  <figure><img id="lbImg" alt=""><figcaption><span id="lbCap"></span><span id="lbNum"></span></figcaption></figure>
+  <button class="lb-nav next" id="lbNext" aria-label="Volgende foto">&#8250;</button>
+</div>
+
+<div class="mcta" id="mcta"><a class="btn" href="#reserver">Nu aanvragen</a></div>
+
+<script>
+/* ===== CONFIG : adresse qui reçoit les demandes ===== */
+const FORM_EMAIL = 'coconalpin.laplagne@gmail.com';
+
+// ===== Photos (galerie + visionneuse) =====
+const PHOTOS = [
+  ['01-salon-1','De woonkamer','sejour'],
+  ['01-salon-2','De woonkamer met slaapbank','sejour'],
+  ['01-salon-3','Tv-hoek, met de sauna op de achtergrond','sejour'],
+  ['10-apres-ski','Einde van de dag in de woonkamer','sejour'],
+  ['05-sejour-1','De gedekte tafel voor zes','repas'],
+  ['05-sejour-2','Eethoek en keuken','repas'],
+  ['05-sejour-3','Dineren met zicht op de woonkamer','repas'],
+  ['05-sejour-4','De tafel, aan de kant van de sauna','repas'],
+  ['07-cuisine','De volledig uitgeruste keuken','cuisine'],
+  ['06-sauna','De privésauna','sauna'],
+  ['03-chambre-principale-1','Hoofdslaapkamer','chambre-principale'],
+  ['03-chambre-principale-2','Hoofdslaapkamer, aan de raamkant','chambre-principale'],
+  ['03-chambre-principale-3','Hoofdslaapkamer, leeslampjes en plankje','chambre-principale'],
+  ['03-chambre-principale-4','Hoofdslaapkamer, uitzicht op het skidorp','chambre-principale'],
+  ['03-chambre-principale-5','Hoofdslaapkamer, aan de tv-kant','chambre-principale'],
+  ['04-chambre-modulable-1','Flexibele slaapkamer','chambre-modulable'],
+  ['04-chambre-modulable-2','Flexibele slaapkamer, bedden tegen elkaar','chambre-modulable'],
+  ['04-chambre-modulable-3','Flexibele slaapkamer, hoofdeinde','chambre-modulable'],
+  ['13-salle-d-eau-chambre-modulable-1',"Badkamer bij de flexibele slaapkamer",'salles-d-eau'],
+  ['13-salle-d-eau-chambre-modulable-2',"Badkamer bij de flexibele slaapkamer",'salles-d-eau'],
+  ['14-salle-d-eau-chambre-separee-2',"Tweede badkamer",'salles-d-eau'],
+  ['14-salle-d-eau-chambre-separee-3',"Tweede badkamer, douche",'salles-d-eau'],
+  ['15-entree-1',"De hal",'entree'],
+  ['12-bureau-teletravail','Thuiswerkplek','teletravail'],
+  ['04-chambre-modulable-4','Bureau en tv in de flexibele slaapkamer','teletravail'],
+  ['11-machine-a-laver-2','Wasmachine en opbergruimte','machine'],
+  ['11-machine-a-laver-1','De gang, met achterin de wasmachine','machine'],
+  ['16-casier-ski','Het verwarmde skikluisje','casier'],
+  ['08-balcons-2','Koffie op het balkon','balcons'],
+  ['08-balcons-1','Uitzicht vanaf het balkon','balcons'],
+  ['02-sunset-balcon-1','Zonsondergang vanaf het balkon','balcons'],
+  ['02-sunset-balcon-2','Avondlicht op de bergtoppen','balcons'],
+  ['09-belle-plagne-1','Het hart van Belle Plagne','station'],
+  ['09-belle-plagne-2','Belle Plagne in de zomer','station'],
+  ['17-plan',"Plattegrond van het appartement",'plan']
+];
+const masonry = document.getElementById('masonry');
+PHOTOS.forEach(([f, cap, g], i) => {
+  const b = document.createElement('button');
+  if (g === 'plan') b.className = 'plan';
+  b.setAttribute('aria-label', cap);
+  b.innerHTML = `<img src="../photos/mini/${f}.jpg" alt="${cap.replace(/"/g,'&quot;')}" loading="lazy"><span class="cap">${cap}</span>`;
+  b.addEventListener('click', () => openLb(i));
+  masonry.appendChild(b);
+});
+document.querySelectorAll('[data-count]').forEach(el => {
+  const n = PHOTOS.filter(p => p[2] === el.dataset.count).length;
+  if (n > 1) el.textContent = n + ' foto’s';
+});
+document.querySelectorAll('.card[data-open]').forEach(card => {
+  const go = () => { const i = PHOTOS.findIndex(p => p[2] === card.dataset.open); if (i >= 0) openLb(i); };
+  card.addEventListener('click', go);
+  card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); go(); } });
+});
+
+const lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg'),
+      lbCap = document.getElementById('lbCap'), lbNum = document.getElementById('lbNum');
+let cur = 0, lastFocus = null;
+function showLb(i){
+  cur = (i + PHOTOS.length) % PHOTOS.length;
+  const [f, cap] = PHOTOS[cur];
+  lbImg.src = `../photos/${f}.jpg`; lbImg.alt = cap;
+  lbCap.textContent = cap; lbNum.textContent = `${cur + 1} / ${PHOTOS.length}`;
+  [cur + 1, cur - 1].forEach(j => { const k = (j + PHOTOS.length) % PHOTOS.length; new Image().src = `../photos/${PHOTOS[k][0]}.jpg`; });
+}
+function openLb(i){ lastFocus = document.activeElement; lb.hidden = false; document.body.classList.add('lb-open'); showLb(i); document.getElementById('lbClose').focus(); }
+function closeLb(){ lb.hidden = true; document.body.classList.remove('lb-open'); lbImg.removeAttribute('src'); if (lastFocus) lastFocus.focus(); }
+document.getElementById('lbClose').onclick = closeLb;
+document.getElementById('lbPrev').onclick = () => showLb(cur - 1);
+document.getElementById('lbNext').onclick = () => showLb(cur + 1);
+lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+addEventListener('keydown', e => {
+  if (lb.hidden) return;
+  if (e.key === 'Escape') closeLb();
+  else if (e.key === 'ArrowRight') showLb(cur + 1);
+  else if (e.key === 'ArrowLeft') showLb(cur - 1);
+});
+let tx = null;
+lb.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, {passive:true});
+lb.addEventListener('touchend', e => {
+  if (tx === null) return;
+  const dx = e.changedTouches[0].clientX - tx; tx = null;
+  if (Math.abs(dx) > 40) showLb(cur + (dx < 0 ? 1 : -1));
+  else if (e.target === lbImg) showLb(cur + 1);
+});
+
+// Language switcher: keep the current section when switching
+const langLi = document.querySelector('.nav .lang'), langBtn = langLi.querySelector('.lang-cur');
+langBtn.addEventListener('click', e => { e.stopPropagation(); const o = langLi.classList.toggle('open'); langBtn.setAttribute('aria-expanded', o); });
+document.addEventListener('click', () => { langLi.classList.remove('open'); langBtn.setAttribute('aria-expanded', 'false'); });
+document.querySelectorAll('.lang a').forEach(a => a.addEventListener('click', () => { a.href = a.getAttribute('href').split('#')[0] + location.hash; }));
+
+// Nav background + mobile CTA on scroll
+const nav = document.getElementById('nav'), mcta = document.getElementById('mcta'), book = document.getElementById('reserver');
+function onScroll(){
+  const y = window.scrollY;
+  nav.classList.toggle('solid', y > 60);
+  const r = book.getBoundingClientRect();
+  mcta.classList.toggle('show', y > window.innerHeight * .8 && r.top > window.innerHeight);
+}
+addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+// Reveal on scroll
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }), {threshold:.12});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// Dates: stays run Saturday to Saturday only
+const DATE_LOCALE = 'nl-NL', WEEKS_MAX = 4, SATURDAYS_AHEAD = 52;
+const T = { pick: 'Kies een zaterdag', pickArrFirst: 'Kies eerst de aankomst', weeks: n => n + (n > 1 ? ' weken' : ' week') };
+const arr = document.getElementById('arrivee'), dep = document.getElementById('depart');
+const iso = d => d.toISOString().slice(0,10);
+const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
+const longDate = d => cap(d.toLocaleDateString(DATE_LOCALE, {day:'numeric', month:'long', year:'numeric', timeZone:'UTC'}));
+const shortDate = d => cap(d.toLocaleDateString(DATE_LOCALE, {day:'numeric', month:'long', timeZone:'UTC'}));
+const addDays = (d, n) => { const x = new Date(d); x.setUTCDate(x.getUTCDate() + n); return x; };
+(function fillArrivals(){
+  const now = new Date();
+  let first = new Date(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate() + 1));
+  first = addDays(first, (6 - first.getUTCDay() + 7) % 7);           // next Saturday (from tomorrow)
+  arr.innerHTML = ''; arr.add(new Option(T.pick, ''));
+  for (let i = 0; i < SATURDAYS_AHEAD; i++){ const d = addDays(first, 7 * i); arr.add(new Option(longDate(d), iso(d))); }
+})();
+function fillDepartures(){
+  const prev = dep.value; dep.innerHTML = '';
+  if (!arr.value){ dep.add(new Option(T.pickArrFirst, '')); dep.disabled = true; return; }
+  dep.disabled = false;
+  const a = new Date(arr.value + 'T00:00:00Z');
+  for (let w = 1; w <= WEEKS_MAX; w++){ const d = addDays(a, 7 * w); dep.add(new Option(`${shortDate(d)} · ${T.weeks(w)}`, iso(d))); }
+  if ([...dep.options].some(o => o.value === prev)) dep.value = prev;
+}
+arr.addEventListener('change', fillDepartures); fillDepartures();
+
+// Submit via FormSubmit (AJAX)
+const form = document.getElementById('bookForm'), msg = document.getElementById('formMsg'), btn = document.getElementById('submitBtn');
+document.getElementById('mailLink').href = 'mailto:' + FORM_EMAIL;
+document.getElementById('mailLink').textContent = FORM_EMAIL;
+function show(type, text){ msg.className = 'msg ' + type; msg.textContent = text; }
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  if (!form.checkValidity()){ form.reportValidity(); return; }
+  if (dep.value <= arr.value){ show('err', 'De vertrekdatum moet na de aankomstdatum liggen.'); return; }
+  const data = Object.fromEntries(new FormData(form));
+  if (data._honey) return;
+  const nuits = Math.round((new Date(dep.value) - new Date(arr.value)) / 864e5);
+  const fmt = s => new Date(s).toLocaleDateString('fr-FR', {day:'numeric', month:'long', year:'numeric', timeZone:'UTC'});
+  const payload = {
+    _subject: `Demande de réservation Cassiopée [NL] — ${fmt(arr.value)} → ${fmt(dep.value)} (${data['Prénom']} ${data['Nom']})`,
+    _template: 'table', _captcha: 'false', _replyto: data.email,
+    'Prénom': data['Prénom'], 'Nom': data['Nom'], 'Email': data.email, 'Téléphone': data['Téléphone'] || '—',
+    'Arrivée': fmt(arr.value), 'Départ': fmt(dep.value), 'Nuits': nuits,
+    'Adultes': data['Adultes'], 'Enfants': data['Enfants'], 'Message': data['Message'] || '—', 'Langue': 'Néerlandais (site NL)'
+  };
+  btn.disabled = true; btn.textContent = 'Bezig met verzenden…';
+  try {
+    const res = await fetch('https://formsubmit.co/ajax/' + FORM_EMAIL, {
+      method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body: JSON.stringify(payload)
+    });
+    const j = await res.json().catch(() => ({}));
+    if (!res.ok || j.success === 'false' || j.success === false) throw new Error(j.message || 'Erreur');
+    form.querySelectorAll('input,select,textarea,button').forEach(el => el.disabled = true);
+    show('ok', `Bedankt, ${data['Prénom']}! Uw aanvraag voor ${nuits} nachten is verzonden. We laten u snel de beschikbaarheid en de prijs weten.`);
+    btn.textContent = 'Aanvraag verzonden';
+  } catch (err) {
+    btn.disabled = false; btn.textContent = 'Aanvraag versturen';
+    const body = Object.entries(payload).filter(([k]) => !k.startsWith('_')).map(([k,v]) => `${k} : ${v}`).join('\n');
+    msg.className = 'msg err';
+    msg.innerHTML = 'Het verzenden is helaas mislukt. <a href="mailto:' + FORM_EMAIL + '?subject=' + encodeURIComponent(payload._subject) + '&body=' + encodeURIComponent(body) + '">Klik hier om uw aanvraag per e-mail te versturen</a> (al ingevuld).';
+  }
+});
+</script>
+</body>
+</html>

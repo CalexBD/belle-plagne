@@ -12,9 +12,13 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:locale:alternate" content="en_GB">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="nl_NL">
 <meta property="og:image" content="https://cocon-alpin.com/photos/01-salon-1.jpg">
 <link rel="alternate" hreflang="fr" href="https://cocon-alpin.com/">
 <link rel="alternate" hreflang="en" href="https://cocon-alpin.com/en/">
+<link rel="alternate" hreflang="de" href="https://cocon-alpin.com/de/">
+<link rel="alternate" hreflang="nl" href="https://cocon-alpin.com/nl/">
 <link rel="alternate" hreflang="x-default" href="https://cocon-alpin.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -253,6 +257,20 @@ body.lb-open{overflow:hidden}
 .nav .lang a[aria-current]{opacity:1;color:var(--white);border-bottom-color:var(--bronze)}
 @media (max-width:520px){.nav .wrap{padding:0 16px;gap:12px}.brand svg{display:none}.nav ul{gap:12px}.nav .lang{font-size:.64rem;letter-spacing:.14em;gap:5px}.nav .btn{white-space:nowrap}}
 @media (max-width:380px){.nav .btn{padding:9px 9px;letter-spacing:.08em}.nav ul{gap:10px}.brand b{font-size:.98rem}}
+/* Language switcher: inline on desktop, dropdown on small screens */
+.nav .lang-list{display:flex;align-items:center;gap:7px}
+.nav .lang-cur{display:none;align-items:center;gap:6px;background:none;border:0;color:var(--white);font:inherit;font-size:.72rem;letter-spacing:.2em;cursor:pointer;padding:6px 0}
+.nav .lang-cur svg{width:9px;height:6px;fill:none;stroke:var(--bronze);stroke-width:1.6;transition:transform .2s}
+@media (max-width:600px){
+  .nav .lang{position:relative}
+  .nav .lang-cur{display:flex}
+  .nav .lang-list{display:none;position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%);flex-direction:column;gap:0;background:rgba(23,44,60,.98);border:1px solid rgba(178,138,90,.4);padding:6px 0;min-width:64px;box-shadow:0 12px 30px rgba(0,0,0,.3)}
+  .nav .lang.open .lang-list{display:flex}
+  .nav .lang.open .lang-cur svg{transform:rotate(180deg)}
+  .nav .lang-list span{display:none}
+  .nav .lang-list a{opacity:.8;padding:9px 18px;border:0;text-align:center}
+  .nav .lang-list a[aria-current]{color:var(--bronze);opacity:1}
+}
 </style>
 </head>
 <body>
@@ -291,7 +309,7 @@ body.lb-open{overflow:hidden}
       <li><a href="#photos">Photos</a></li>
       <li><a href="#station">La station</a></li>
       <li><a href="#inclus">Inclus</a></li>
-      <li class="lang"><a href="/" lang="fr" aria-current="page" aria-label="Version française">FR</a><span>·</span><a href="/en/" lang="en" hreflang="en" aria-label="English version">EN</a></li>
+      <li class="lang"><button type="button" class="lang-cur" aria-expanded="false" aria-label="Langue / Language">FR<svg viewBox="0 0 10 6" aria-hidden="true"><path d="m1 1 4 4 4-4"/></svg></button><div class="lang-list"><a href="/" lang="fr" hreflang="fr" aria-label="Version française" aria-current="page">FR</a><span>·</span><a href="/en/" lang="en" hreflang="en" aria-label="English version">EN</a><span>·</span><a href="/de/" lang="de" hreflang="de" aria-label="Deutsche Version">DE</a><span>·</span><a href="/nl/" lang="nl" hreflang="nl" aria-label="Nederlandse versie">NL</a></div></li>
       <li><a class="btn" href="#reserver">Demander mes dates</a></li>
     </ul>
   </div>
@@ -640,6 +658,9 @@ lb.addEventListener('touchend', e => {
 });
 
 // Language switcher: keep the current section when switching
+const langLi = document.querySelector('.nav .lang'), langBtn = langLi.querySelector('.lang-cur');
+langBtn.addEventListener('click', e => { e.stopPropagation(); const o = langLi.classList.toggle('open'); langBtn.setAttribute('aria-expanded', o); });
+document.addEventListener('click', () => { langLi.classList.remove('open'); langBtn.setAttribute('aria-expanded', 'false'); });
 document.querySelectorAll('.lang a').forEach(a => a.addEventListener('click', () => { a.href = a.getAttribute('href').split('#')[0] + location.hash; }));
 
 // Nav background + mobile CTA on scroll
