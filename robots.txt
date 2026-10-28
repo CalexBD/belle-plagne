@@ -1,0 +1,22 @@
+# Cocon Alpin — Belle Plagne
+# Tous les robots sont autorisés (moteurs de recherche et moteurs IA).
+User-agent: *
+Allow: /
+
+# Moteurs IA — autorisés explicitement pour apparaître dans leurs réponses
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://www.cocon-alpin.com/sitemap.xml
