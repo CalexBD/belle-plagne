@@ -36,4 +36,32 @@
     <xhtml:link rel="alternate" hreflang="nl" href="https://www.cocon-alpin.com/nl/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cocon-alpin.com/"/>
   </url>
+  <url>
+    <loc>https://www.cocon-alpin.com/venir-a-belle-plagne/</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cocon-alpin.com/venir-a-belle-plagne/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cocon-alpin.com/en/getting-to-belle-plagne/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cocon-alpin.com/venir-a-belle-plagne/"/>
+  </url>
+  <url>
+    <loc>https://www.cocon-alpin.com/en/getting-to-belle-plagne/</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cocon-alpin.com/venir-a-belle-plagne/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cocon-alpin.com/en/getting-to-belle-plagne/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cocon-alpin.com/venir-a-belle-plagne/"/>
+  </url>
+  <url>
+    <loc>https://www.cocon-alpin.com/calendrier-vacances-scolaires/</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cocon-alpin.com/calendrier-vacances-scolaires/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cocon-alpin.com/en/school-holidays/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cocon-alpin.com/calendrier-vacances-scolaires/"/>
+  </url>
+  <url>
+    <loc>https://www.cocon-alpin.com/en/school-holidays/</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.cocon-alpin.com/calendrier-vacances-scolaires/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.cocon-alpin.com/en/school-holidays/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.cocon-alpin.com/calendrier-vacances-scolaires/"/>
+  </url>
 </urlset>

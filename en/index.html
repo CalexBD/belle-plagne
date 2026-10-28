@@ -160,6 +160,128 @@
  }
 }
 </script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "inLanguage": "en",
+ "url": "https://www.cocon-alpin.com/en/#faq",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "What are the check-in and check-out times, and how do we get the keys?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Stays run from Saturday to Saturday. Check-in is from 5 pm and check-out by 10 am. Check-in is fully self-service: you enter the apartment with a code we send you before your stay. No agency to find, no keys to collect."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How do we get there by train?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Take the train to Aime-La Plagne station in the valley, then go up to the resort by shuttle bus or taxi."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Do we need a car in the resort?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No: everything in Belle Plagne is within walking distance. A space in the residence's covered car park is included in your booking. Please note the maximum height is 1.90 m (mind roof boxes and vans)."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Do we need snow chains or winter tyres to drive up?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. In winter, bring winter tyres or snow chains (or snow socks) to drive up to the resort."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What is included in the price?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "End-of-stay cleaning, bed linen and towels, the tourist tax, the covered parking space and the heated ski locker are all included."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Do you rent the apartment in summer?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No, the apartment is only rented during the winter season."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Are pets allowed?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No, pets are not allowed."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can we smoke in the apartment or on the balconies?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No, the apartment is entirely non-smoking, balconies included."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Is the apartment suitable for babies and young children?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. A baby cot and a high chair can be provided on request (an extra charge may apply). The apartment has two shower rooms but no bathtub."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Is there a lift?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes, the apartment is served by a lift."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Is the sauna shared?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No, the sauna is private and built into the apartment itself. It is yours to use throughout your stay, with no booking or time slots."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Is it ski-in, ski-out?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes: the slopes are 20 m from the residence. Your skis and boots stay in your heated ski locker at the foot of the slopes."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Where can we buy ski passes?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "At the tourist office in the village centre, 40 m from the residence, or online before you arrive."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What is there to do if snow is short, or for non-skiers?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Belle Plagne has a bowling alley, the Deep Nature spa and plenty of walks. And your private sauna is waiting back at the apartment."
+   }
+  }
+ ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&family=Satisfy&display=swap" rel="stylesheet">
@@ -221,7 +343,7 @@ a.ph:hover img,.card:hover .ph img{transform:scale(1.04)}
 .nav ul a:hover{opacity:1;color:var(--bronze)}
 .nav .btn{padding:11px 20px;font-size:.68rem}
 .nav.solid{background:rgba(23,44,60,.97);box-shadow:0 1px 0 rgba(255,255,255,.06)}
-@media (max-width:860px){.nav ul li:not(:last-child):not(.lang){display:none}}
+@media (max-width:1180px){.nav ul li:not(:last-child):not(.lang){display:none}}
 @media (max-width:520px){.brand b{font-size:1.05rem}.nav .btn{padding:9px 12px;font-size:.6rem;letter-spacing:.14em}.facts li{font-size:.82rem}.facts .sub{letter-spacing:.16em}.facts .sub{font-size:0}.facts .sub span{font-size:.66rem}.hero-inner{padding-bottom:130px}}
 
 /* Hero */
@@ -339,6 +461,22 @@ form .btn{width:100%}
 @media (max-width:900px){.book .grid{grid-template-columns:1fr;gap:44px}}
 @media (max-width:520px){.row{grid-template-columns:1fr;gap:0}form{padding:26px 20px}}
 
+/* FAQ */
+.faq{background:var(--white)}
+.faq .list{max-width:860px;margin-top:36px}
+.faq details{border-bottom:1px solid rgba(117,110,101,.18)}
+.faq summary{cursor:pointer;list-style:none;position:relative;padding:20px 44px 20px 0;font-family:var(--serif);font-size:1.28rem;font-weight:500;color:var(--navy);line-height:1.3}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:6px;top:16px;font-family:var(--sans);font-weight:300;font-size:1.5rem;color:var(--bronze);transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:focus-visible{outline:1px solid var(--bronze);outline-offset:4px}
+.faq details p{color:var(--taupe);padding:0 0 22px;max-width:720px}
+.faq details p a{color:var(--navy);text-decoration-color:var(--bronze);text-underline-offset:3px}
+.faq .guides{margin-top:44px;display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;font-size:.9rem}
+.faq .guides strong{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--bronze);font-weight:600}
+.faq .guides a{color:var(--navy);text-decoration-color:var(--bronze);text-underline-offset:3px}
+@media (max-width:520px){.faq summary{font-size:1.12rem}}
+
 /* Footer */
 footer{background:#10202D;color:#B9B2A6;padding:46px 0;font-size:.8rem}
 footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
@@ -449,6 +587,7 @@ body.lb-open{overflow:hidden}
       <li><a href="#photos">Photos</a></li>
       <li><a href="#station">The resort</a></li>
       <li><a href="#inclus">Included</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li class="lang"><button type="button" class="lang-cur" aria-expanded="false" aria-label="Langue / Language">EN<svg viewBox="0 0 10 6" aria-hidden="true"><path d="m1 1 4 4 4-4"/></svg></button><div class="lang-list"><a href="/" lang="fr" hreflang="fr" aria-label="Version française">FR</a><span>·</span><a href="/en/" lang="en" hreflang="en" aria-label="English version" aria-current="page">EN</a><span>·</span><a href="/de/" lang="de" hreflang="de" aria-label="Deutsche Version">DE</a><span>·</span><a href="/nl/" lang="nl" hreflang="nl" aria-label="Nederlandse versie">NL</a></div></li>
       <li><a class="btn" href="#reserver">Check availability</a></li>
     </ul>
@@ -645,6 +784,30 @@ body.lb-open{overflow:hidden}
   </div>
 </section>
 
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="eyebrow">Frequently asked questions</div>
+    <h2 class="title">Good to know before you book</h2>
+    <div class="list">
+      <details><summary>What are the check-in and check-out times, and how do we get the keys?</summary><p>Stays run from Saturday to Saturday. Check-in is from 5 pm and check-out by 10 am. Check-in is fully self-service: you enter the apartment with a code we send you before your stay. No agency to find, no keys to collect.</p></details>
+      <details><summary>How do we get there by train?</summary><p>Take the train to Aime-La Plagne station in the valley, then go up to the resort by shuttle bus or taxi. <a href="/en/getting-to-belle-plagne/">Full details on getting to Belle Plagne</a>.</p></details>
+      <details><summary>Do we need a car in the resort?</summary><p>No: everything in Belle Plagne is within walking distance. A space in the residence's covered car park is included in your booking. Please note the maximum height is 1.90 m (mind roof boxes and vans).</p></details>
+      <details><summary>Do we need snow chains or winter tyres to drive up?</summary><p>Yes. In winter, bring winter tyres or snow chains (or snow socks) to drive up to the resort. <a href="/en/getting-to-belle-plagne/">Full details on getting to Belle Plagne</a>.</p></details>
+      <details><summary>What is included in the price?</summary><p>End-of-stay cleaning, bed linen and towels, the tourist tax, the covered parking space and the heated ski locker are all included.</p></details>
+      <details><summary>Do you rent the apartment in summer?</summary><p>No, the apartment is only rented during the winter season.</p></details>
+      <details><summary>Are pets allowed?</summary><p>No, pets are not allowed.</p></details>
+      <details><summary>Can we smoke in the apartment or on the balconies?</summary><p>No, the apartment is entirely non-smoking, balconies included.</p></details>
+      <details><summary>Is the apartment suitable for babies and young children?</summary><p>Yes. A baby cot and a high chair can be provided on request (an extra charge may apply). The apartment has two shower rooms but no bathtub.</p></details>
+      <details><summary>Is there a lift?</summary><p>Yes, the apartment is served by a lift.</p></details>
+      <details><summary>Is the sauna shared?</summary><p>No, the sauna is private and built into the apartment itself. It is yours to use throughout your stay, with no booking or time slots.</p></details>
+      <details><summary>Is it ski-in, ski-out?</summary><p>Yes: the slopes are 20 m from the residence. Your skis and boots stay in your heated ski locker at the foot of the slopes.</p></details>
+      <details><summary>Where can we buy ski passes?</summary><p>At the tourist office in the village centre, 40 m from the residence, or online before you arrive.</p></details>
+      <details><summary>What is there to do if snow is short, or for non-skiers?</summary><p>Belle Plagne has a bowling alley, the Deep Nature spa and plenty of walks. And your private sauna is waiting back at the apartment.</p></details>
+    </div>
+    <div class="guides"><strong>Plan your stay</strong><a href="/en/getting-to-belle-plagne/">Getting to Belle Plagne</a><a href="/en/school-holidays/">School holiday calendar</a></div>
+  </div>
+</section>
+
 <section class="book" id="reserver">
   <div class="wrap grid">
     <div class="reveal">
@@ -744,7 +907,7 @@ const PHOTOS = [
   ['02-sunset-balcon-1','Sunset from the balcony','balcons'],
   ['02-sunset-balcon-2','Evening light on the peaks','balcons'],
   ['09-belle-plagne-1','The heart of Belle Plagne','station'],
-  ['09-belle-plagne-2','Belle Plagne in summer','station'],
+  ['09-belle-plagne-2','Belle Plagne from the alpine meadows','station'],
   ['17-plan','Apartment floor plan','plan']
 ];
 const masonry = document.getElementById('masonry');
