@@ -381,7 +381,7 @@ a.ph:hover img,.card:hover .ph img{transform:scale(1.04)}
 .facts li svg{display:block;width:30px;height:30px;stroke:var(--bronze);fill:none;stroke-width:1.3;margin:0 auto 10px}
 .facts .sub{border-top:1px solid rgba(178,138,90,.35);text-align:center;padding:14px 10px;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:#E3D7C4}
 .facts .sub span{margin:0 14px;white-space:nowrap}
-@media (max-width:760px){.facts ul{grid-template-columns:repeat(3,1fr)}.facts li:nth-child(3){border-right:0}.facts li:nth-child(n+4){border-top:1px solid rgba(178,138,90,.35)}.facts .sub span{display:block;margin:4px 0}}
+@media (max-width:760px){.facts ul{grid-template-columns:repeat(6,1fr)}.facts li{grid-column:span 2}.facts li:nth-child(3){border-right:0}.facts li:nth-child(n+4){grid-column:span 3;border-top:1px solid rgba(178,138,90,.35)}.facts .sub{font-size:0}.facts .sub span{display:block;margin:5px 0;font-size:.66rem;letter-spacing:.2em}}
 
 /* Intro */
 .intro .grid{display:grid;grid-template-columns:1.05fr 1fr;gap:72px;align-items:center}
