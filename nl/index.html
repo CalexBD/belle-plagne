@@ -888,6 +888,8 @@ body.lb-open{overflow:hidden}
 <script>
 /* ===== CONFIG : adresse qui reçoit les demandes ===== */
 const FORM_EMAIL = 'coconalpin.laplagne@gmail.com';
+// Clé Web3Forms (web3forms.com) : laisser vide pour n'utiliser que FormSubmit.
+const WEB3FORMS_KEY = '50829e95-80ed-49cd-b3f6-4ca4c1f017ae';
 
 // ===== Photos (galerie + visionneuse) =====
 const PHOTOS = [
@@ -1023,7 +1025,31 @@ function fillDepartures(){
 }
 arr.addEventListener('change', fillDepartures); fillDepartures();
 
-// Submit via FormSubmit (AJAX)
+// Envoi des demandes : Web3Forms en priorité (si la clé est renseignée), FormSubmit en secours.
+// Si les deux échouent, le visiteur se voit proposer un email pré-rempli.
+async function postJSON(url, body){
+  const ctrl = new AbortController(), t = setTimeout(() => ctrl.abort(), 15000);
+  try {
+    const res = await fetch(url, { method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body: JSON.stringify(body), signal: ctrl.signal });
+    const j = await res.json().catch(() => ({}));
+    if (!res.ok || j.success === 'false' || j.success === false) throw new Error(j.message || ('HTTP ' + res.status));
+    return j;
+  } finally { clearTimeout(t); }
+}
+async function sendRequest(payload){
+  const fields = Object.fromEntries(Object.entries(payload).filter(([k]) => !k.startsWith('_')));
+  if (WEB3FORMS_KEY){
+    try {
+      return await postJSON('https://api.web3forms.com/submit', {
+        access_key: WEB3FORMS_KEY, subject: payload._subject, from_name: 'Site Cocon Alpin',
+        replyto: payload._replyto, botcheck: false, ...fields
+      });
+    } catch (e) { console.warn('Web3Forms indisponible, essai FormSubmit', e); }
+  }
+  return postJSON('https://formsubmit.co/ajax/' + FORM_EMAIL, payload);
+}
+
+// Submit
 const form = document.getElementById('bookForm'), msg = document.getElementById('formMsg'), btn = document.getElementById('submitBtn');
 document.getElementById('mailLink').href = 'mailto:' + FORM_EMAIL;
 document.getElementById('mailLink').textContent = FORM_EMAIL;
@@ -1045,11 +1071,7 @@ form.addEventListener('submit', async e => {
   };
   btn.disabled = true; btn.textContent = 'Bezig met verzenden…';
   try {
-    const res = await fetch('https://formsubmit.co/ajax/' + FORM_EMAIL, {
-      method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body: JSON.stringify(payload)
-    });
-    const j = await res.json().catch(() => ({}));
-    if (!res.ok || j.success === 'false' || j.success === false) throw new Error(j.message || 'Erreur');
+    await sendRequest(payload);
     form.querySelectorAll('input,select,textarea,button').forEach(el => el.disabled = true);
     show('ok', `Bedankt, ${data['Prénom']}! Uw aanvraag voor ${nuits} nachten is verzonden. We laten u snel de beschikbaarheid en de prijs weten.`);
     btn.textContent = 'Aanvraag verzonden';
