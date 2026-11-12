@@ -534,6 +534,29 @@ form .btn{width:100%}
 .faq .guides{margin-top:44px;display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;font-size:.9rem}
 .faq .guides strong{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--bronze);font-weight:600}
 .faq .guides a{color:var(--navy);text-decoration-color:var(--bronze);text-underline-offset:3px}
+/* Disponibilités saison */
+.dispo{background:var(--ivory)}
+.dispo .dispo-intro{color:var(--taupe);max-width:660px;margin-top:14px}
+.dispo-legend{display:flex;flex-wrap:wrap;gap:10px 26px;margin:24px 0 8px;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+.dispo-legend span{display:flex;align-items:center;gap:8px}
+.dispo-legend .ok{color:#2E7D4F}.dispo-legend .ko{color:#B23A3A}
+.dispo-month{margin-top:30px}
+.dispo-month h3{font-family:var(--sans);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--bronze);font-weight:600;margin-bottom:12px}
+.dispo-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(188px,1fr));gap:12px}
+.wk{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:16px 18px;border:1px solid rgba(117,110,101,.2);background:var(--white);font:inherit;text-align:left;color:inherit;border-radius:2px}
+.wk .d{font-family:var(--serif);font-size:1.25rem;white-space:nowrap;font-weight:500;line-height:1.1;color:var(--navy)}
+.wk .st{display:flex;align-items:center;gap:7px;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+.ic{width:18px;height:18px;flex:none;border-radius:50%;display:inline-flex;align-items:center;justify-content:center}
+.ic svg{width:12px;height:12px;fill:none;stroke:#fff;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.ic.ok{background:#2E7D4F}.ic.ko{background:#B23A3A}
+button.wk.ok{cursor:pointer;border-color:rgba(46,125,79,.4);transition:transform .2s,box-shadow .2s,border-color .2s}
+button.wk.ok:hover,button.wk.ok:focus-visible{transform:translateY(-2px);border-color:#2E7D4F;box-shadow:0 8px 22px rgba(23,44,60,.08);outline:none}
+.wk.ok .st{color:#2E7D4F}
+.wk.ko{background:transparent;border-color:rgba(178,58,58,.22)}
+.wk.ko .d{color:#A39A90;text-decoration:line-through;text-decoration-color:#B23A3A;text-decoration-thickness:2px}
+.wk.ko .st{color:#B23A3A}
+.dispo-upd{margin-top:26px;font-size:.78rem;color:var(--taupe)}
+@media (max-width:520px){.dispo-row{grid-template-columns:1fr 1fr;gap:10px}.wk{padding:14px}.wk .d{font-size:1.08rem}}
 @media (max-width:520px){.faq summary{font-size:1.12rem}}
 
 /* Footer */
@@ -868,6 +891,19 @@ body.lb-open{overflow:hidden}
   </div>
 </section>
 
+<section class="dispo" id="disponibilites">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Saison 2026-2027</div>
+      <h2 class="title">Verfügbare Wochen</h2>
+      <p class="dispo-intro">Aufenthalte von Samstag bis Samstag, vom 12. Dezember 2026 bis 24. April 2027. Klicken Sie auf eine freie Woche, um sie direkt anzufragen.</p>
+      <div class="dispo-legend"><span class="ok"><i class="ic ok"><svg viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9"/></svg></i>Verfügbar</span><span class="ko"><i class="ic ko"><svg viewBox="0 0 20 20"><path d="m5.5 5.5 9 9m0-9-9 9"/></svg></i>Belegt</span></div>
+    </div>
+    <div id="dispoGrid"></div>
+    <p class="dispo-upd">Stand: 12. November 2026</p>
+  </div>
+</section>
+
 <section class="book" id="reserver">
   <div class="wrap grid">
     <div class="reveal">
@@ -1042,31 +1078,74 @@ addEventListener('scroll', onScroll, {passive:true}); onScroll();
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }), {threshold:.12});
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-// Dates: stays run Saturday to Saturday only
-const DATE_LOCALE = 'de-DE', WEEKS_MAX = 4, SATURDAYS_AHEAD = 52;
-const T = { pick: 'Samstag wählen', pickArrFirst: 'Bitte zuerst die Anreise wählen', weeks: n => n + (n > 1 ? ' Wochen' : ' Woche') };
+// Dates : séjours du samedi au samedi, saison d'hiver uniquement
+// >>> À METTRE À JOUR : semaines déjà louées (samedi d'arrivée, samedi de départ) <<<
+const BOOKED = [
+  ['2026-12-12','2026-12-19'], ['2026-12-19','2026-12-26'], ['2026-12-26','2027-01-02'],
+  ['2027-01-02','2027-01-09'], ['2027-01-09','2027-01-16'], ['2027-02-13','2027-02-20'],
+  ['2027-02-27','2027-03-06'], ['2027-03-27','2027-04-03']
+];
+const SEASON_FIRST = '2026-12-12', SEASON_LAST = '2027-04-17';   // premier et dernier samedi d'arrivée (départ max 24 avril)
+const DATE_LOCALE = 'de-DE', WEEKS_MAX = 4;
+const T = { taken: 'belegt', pick: 'Samstag wählen', pickArrFirst: 'Bitte zuerst die Anreise wählen', weeks: n => n + (n > 1 ? ' Wochen' : ' Woche') };
+const DL = { ok: 'Verfügbar', ko: 'Belegt', aria: 'Woche anfragen ab' };
 const arr = document.getElementById('arrivee'), dep = document.getElementById('depart');
 const iso = d => d.toISOString().slice(0,10);
 const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
 const longDate = d => cap(d.toLocaleDateString(DATE_LOCALE, {day:'numeric', month:'long', year:'numeric', timeZone:'UTC'}));
 const shortDate = d => cap(d.toLocaleDateString(DATE_LOCALE, {day:'numeric', month:'long', timeZone:'UTC'}));
 const addDays = (d, n) => { const x = new Date(d); x.setUTCDate(x.getUTCDate() + n); return x; };
+const isBooked = s => BOOKED.some(([a, b]) => s >= a && s < b);
+const SEASON_WEEKS = (() => {
+  const now = new Date(), tomorrow = iso(new Date(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate() + 1)));
+  const out = []; for (let d = new Date(SEASON_FIRST + 'T00:00:00Z'); iso(d) <= SEASON_LAST; d = addDays(d, 7)) if (iso(d) >= tomorrow) out.push(iso(d));
+  return out;
+})();
 (function fillArrivals(){
-  const now = new Date();
-  let first = new Date(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate() + 1));
-  first = addDays(first, (6 - first.getUTCDay() + 7) % 7);           // next Saturday (from tomorrow)
   arr.innerHTML = ''; arr.add(new Option(T.pick, ''));
-  for (let i = 0; i < SATURDAYS_AHEAD; i++){ const d = addDays(first, 7 * i); arr.add(new Option(longDate(d), iso(d))); }
+  SEASON_WEEKS.forEach(s => {
+    const d = new Date(s + 'T00:00:00Z'), taken = isBooked(s);
+    const o = new Option(taken ? `${longDate(d)} · ${T.taken}` : longDate(d), s);
+    o.disabled = taken; arr.add(o);
+  });
 })();
 function fillDepartures(){
   const prev = dep.value; dep.innerHTML = '';
   if (!arr.value){ dep.add(new Option(T.pickArrFirst, '')); dep.disabled = true; return; }
   dep.disabled = false;
   const a = new Date(arr.value + 'T00:00:00Z');
-  for (let w = 1; w <= WEEKS_MAX; w++){ const d = addDays(a, 7 * w); dep.add(new Option(`${shortDate(d)} · ${T.weeks(w)}`, iso(d))); }
+  for (let w = 1; w <= WEEKS_MAX; w++){
+    const start = iso(addDays(a, 7 * (w - 1)));
+    if (start > SEASON_LAST || isBooked(start)) break;              // on ne peut pas chevaucher une semaine louée
+    const d = addDays(a, 7 * w); dep.add(new Option(`${shortDate(d)} · ${T.weeks(w)}`, iso(d)));
+  }
   if ([...dep.options].some(o => o.value === prev)) dep.value = prev;
 }
 arr.addEventListener('change', fillDepartures); fillDepartures();
+
+// Section "semaines disponibles"
+(function renderDispo(){
+  const grid = document.getElementById('dispoGrid'); if (!grid) return;
+  const fd = o => new Intl.DateTimeFormat(DATE_LOCALE, Object.assign({timeZone:'UTC'}, o));
+  const dayF = fd({day:'numeric'}), dmF = fd({day:'numeric', month:'short'}), monF = fd({month:'long', year:'numeric'});
+  const CHK = '<svg viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9"/></svg>', CRS = '<svg viewBox="0 0 20 20"><path d="m5.5 5.5 9 9m0-9-9 9"/></svg>';
+  let html = '', curM = '';
+  SEASON_WEEKS.forEach(s => {
+    const a = new Date(s + 'T00:00:00Z'), b = addDays(a, 7), m = cap(monF.format(a));
+    if (m !== curM){ html += (curM ? '</div></div>' : '') + `<div class="dispo-month"><h3>${m}</h3><div class="dispo-row">`; curM = m; }
+    const label = a.getUTCMonth() === b.getUTCMonth() ? `${dayF.format(a)} → ${dmF.format(b)}` : `${dmF.format(a)} → ${dmF.format(b)}`;
+    html += isBooked(s)
+      ? `<div class="wk ko"><span class="d">${label}</span><span class="st"><i class="ic ko">${CRS}</i>${DL.ko}</span></div>`
+      : `<button type="button" class="wk ok" data-week="${s}" aria-label="${DL.aria} ${longDate(a)}"><span class="d">${label}</span><span class="st"><i class="ic ok">${CHK}</i>${DL.ok}</span></button>`;
+  });
+  grid.innerHTML = html + (curM ? '</div></div>' : '');
+  grid.addEventListener('click', e => {
+    const btn = e.target.closest('button.wk'); if (!btn) return;
+    arr.value = btn.dataset.week; fillDepartures(); dep.selectedIndex = 0;
+    document.getElementById('reserver').scrollIntoView({behavior:'smooth'});
+    setTimeout(() => document.getElementById('prenom').focus({preventScroll:true}), 700);
+  });
+})();
 
 // Envoi des demandes : Web3Forms en priorité (si la clé est renseignée), FormSubmit en secours.
 // Si les deux échouent, le visiteur se voit proposer un email pré-rempli.
