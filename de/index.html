@@ -247,7 +247,7 @@
    "name": "Was ist im Preis inbegriffen?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Endreinigung, Bettwäsche und Handtücher, Kurtaxe, der überdachte Stellplatz und der beheizte Skispind sind inbegriffen."
+    "text": "Endreinigung, Bettwäsche und Handtücher, WLAN, der überdachte Stellplatz und der beheizte Skispind sind inbegriffen. Die Kurtaxe ist nicht inbegriffen und wird separat berechnet."
    }
   },
   {
@@ -537,6 +537,8 @@ form .btn{width:100%}
 /* Disponibilités saison */
 .dispo{background:var(--ivory)}
 .dispo .dispo-intro{color:var(--taupe);max-width:660px;margin-top:14px}
+.dispo-price{display:inline-block;margin-top:16px;padding:12px 18px;border-left:3px solid var(--bronze);background:var(--white);color:var(--ink);font-size:.95rem;max-width:660px}
+.dispo-price strong{color:var(--navy);font-weight:600}
 .dispo-legend{display:flex;flex-wrap:wrap;gap:10px 26px;margin:24px 0 8px;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
 .dispo-legend span{display:flex;align-items:center;gap:8px}
 .dispo-legend .ok{color:#2E7D4F}.dispo-legend .ko{color:#B23A3A}
@@ -875,7 +877,7 @@ body.lb-open{overflow:hidden}
       <details><summary>Wie kommen wir mit dem Zug an?</summary><p>Fahren Sie bis zum Bahnhof Aime-La Plagne im Tal und von dort mit dem Shuttlebus oder Taxi hinauf in den Skiort.</p></details>
       <details><summary>Brauchen wir vor Ort ein Auto?</summary><p>Nein: In Belle Plagne ist alles zu Fuß erreichbar. Ein Stellplatz in der überdachten Tiefgarage der Residenz ist in Ihrer Buchung inbegriffen. Bitte beachten Sie die maximale Einfahrtshöhe von 1,90 m (Dachboxen und Vans).</p></details>
       <details><summary>Brauchen wir Schneeketten oder Winterreifen für die Anfahrt?</summary><p>Ja. Im Winter benötigen Sie für die Auffahrt in den Skiort Winterreifen oder Schneeketten (bzw. Schneesocken).</p></details>
-      <details><summary>Was ist im Preis inbegriffen?</summary><p>Endreinigung, Bettwäsche und Handtücher, Kurtaxe, der überdachte Stellplatz und der beheizte Skispind sind inbegriffen.</p></details>
+      <details><summary>Was ist im Preis inbegriffen?</summary><p>Endreinigung, Bettwäsche und Handtücher, WLAN, der überdachte Stellplatz und der beheizte Skispind sind inbegriffen. Die Kurtaxe ist nicht inbegriffen und wird separat berechnet.</p></details>
       <details><summary>Vermieten Sie die Wohnung auch im Sommer?</summary><p>Nein, die Wohnung wird nur in der Wintersaison vermietet.</p></details>
       <details><summary>Sind Haustiere erlaubt?</summary><p>Nein, Haustiere sind nicht erlaubt.</p></details>
       <details><summary>Darf geraucht oder gedampft werden?</summary><p>Rauchen und Dampfen (E-Zigarette) sind in der Wohnung nicht erlaubt, auf den Balkonen dagegen schon.</p></details>
@@ -897,6 +899,7 @@ body.lb-open{overflow:hidden}
       <div class="eyebrow">Saison 2026-2027</div>
       <h2 class="title">Verfügbare Wochen</h2>
       <p class="dispo-intro">Aufenthalte von Samstag bis Samstag, vom 12. Dezember 2026 bis 24. April 2027. Klicken Sie auf eine freie Woche, um sie direkt anzufragen.</p>
+      <p class="dispo-price"><strong>Preise: 1.700 € bis 3.600 € pro Woche</strong> je nach Zeitraum, alles inklusive (Endreinigung, Bett- und Badwäsche, WLAN und überdachter Parkplatz).</p>
       <div class="dispo-legend"><span class="ok"><i class="ic ok"><svg viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9"/></svg></i>Verfügbar</span><span class="ko"><i class="ic ko"><svg viewBox="0 0 20 20"><path d="m5.5 5.5 9 9m0-9-9 9"/></svg></i>Belegt</span></div>
     </div>
     <div id="dispoGrid"></div>

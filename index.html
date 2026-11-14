@@ -247,7 +247,7 @@
    "name": "Que comprend le prix ?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Le ménage de fin de séjour, le linge de lit et les serviettes, la taxe de séjour, la place de parking couvert et le casier à skis chauffant sont inclus."
+    "text": "Le ménage de fin de séjour, le linge de lit et les serviettes, le Wi-Fi, la place de parking couvert et le casier à skis chauffant sont inclus. La taxe de séjour n'est pas incluse et reste à régler en supplément."
    }
   },
   {
@@ -537,6 +537,8 @@ form .btn{width:100%}
 /* Disponibilités saison */
 .dispo{background:var(--ivory)}
 .dispo .dispo-intro{color:var(--taupe);max-width:660px;margin-top:14px}
+.dispo-price{display:inline-block;margin-top:16px;padding:12px 18px;border-left:3px solid var(--bronze);background:var(--white);color:var(--ink);font-size:.95rem;max-width:660px}
+.dispo-price strong{color:var(--navy);font-weight:600}
 .dispo-legend{display:flex;flex-wrap:wrap;gap:10px 26px;margin:24px 0 8px;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
 .dispo-legend span{display:flex;align-items:center;gap:8px}
 .dispo-legend .ok{color:#2E7D4F}.dispo-legend .ko{color:#B23A3A}
@@ -875,7 +877,7 @@ body.lb-open{overflow:hidden}
       <details><summary>Comment venir en train ?</summary><p>Descendez à la gare d'Aime-La Plagne, dans la vallée, puis montez en station en navette ou en taxi. <a href="/venir-a-belle-plagne/">Tous les détails pour venir à Belle Plagne</a>.</p></details>
       <details><summary>La voiture est-elle utile sur place ?</summary><p>Non : tout se fait à pied à Belle Plagne. Une place dans le parking couvert de la résidence est incluse dans votre réservation. Attention, la hauteur maximale est de 1,90 m (pensez aux coffres de toit et aux vans).</p></details>
       <details><summary>Faut-il des chaînes ou des pneus neige pour monter ?</summary><p>Oui. En hiver, prévoyez des pneus hiver ou des chaînes (ou chaussettes à neige) pour monter en station. <a href="/venir-a-belle-plagne/">Tous les détails pour venir à Belle Plagne</a>.</p></details>
-      <details><summary>Que comprend le prix ?</summary><p>Le ménage de fin de séjour, le linge de lit et les serviettes, la taxe de séjour, la place de parking couvert et le casier à skis chauffant sont inclus.</p></details>
+      <details><summary>Que comprend le prix ?</summary><p>Le ménage de fin de séjour, le linge de lit et les serviettes, le Wi-Fi, la place de parking couvert et le casier à skis chauffant sont inclus. La taxe de séjour n'est pas incluse et reste à régler en supplément.</p></details>
       <details><summary>Louez-vous l'appartement en été ?</summary><p>Non, l'appartement est loué uniquement pendant la saison d'hiver.</p></details>
       <details><summary>Les animaux sont-ils acceptés ?</summary><p>Non, les animaux ne sont pas acceptés.</p></details>
       <details><summary>Peut-on fumer ou vapoter ?</summary><p>Il est interdit de fumer et de vapoter à l'intérieur de l'appartement. C'est en revanche autorisé sur les balcons.</p></details>
@@ -898,6 +900,7 @@ body.lb-open{overflow:hidden}
       <div class="eyebrow">Saison 2026-2027</div>
       <h2 class="title">Les semaines disponibles</h2>
       <p class="dispo-intro">Séjours du samedi au samedi, du 12 décembre 2026 au 24 avril 2027. Cliquez sur une semaine disponible pour la demander directement.</p>
+      <p class="dispo-price"><strong>Tarifs : de 1 700 € à 3 600 € la semaine</strong> selon la période, tout inclus (ménage, linge de maison, Wi-Fi et parking couvert).</p>
       <div class="dispo-legend"><span class="ok"><i class="ic ok"><svg viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9"/></svg></i>Disponible</span><span class="ko"><i class="ic ko"><svg viewBox="0 0 20 20"><path d="m5.5 5.5 9 9m0-9-9 9"/></svg></i>Plus dispo</span></div>
     </div>
     <div id="dispoGrid"></div>

@@ -247,7 +247,7 @@
    "name": "Wat is inbegrepen in de prijs?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "De eindschoonmaak, bedlinnen en handdoeken, de toeristenbelasting, de overdekte parkeerplaats en het verwarmde skikluisje zijn inbegrepen."
+    "text": "De eindschoonmaak, bedlinnen en handdoeken, wifi, de overdekte parkeerplaats en het verwarmde skikluisje zijn inbegrepen. De toeristenbelasting is niet inbegrepen en wordt apart afgerekend."
    }
   },
   {
@@ -537,6 +537,8 @@ form .btn{width:100%}
 /* Disponibilités saison */
 .dispo{background:var(--ivory)}
 .dispo .dispo-intro{color:var(--taupe);max-width:660px;margin-top:14px}
+.dispo-price{display:inline-block;margin-top:16px;padding:12px 18px;border-left:3px solid var(--bronze);background:var(--white);color:var(--ink);font-size:.95rem;max-width:660px}
+.dispo-price strong{color:var(--navy);font-weight:600}
 .dispo-legend{display:flex;flex-wrap:wrap;gap:10px 26px;margin:24px 0 8px;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
 .dispo-legend span{display:flex;align-items:center;gap:8px}
 .dispo-legend .ok{color:#2E7D4F}.dispo-legend .ko{color:#B23A3A}
@@ -875,7 +877,7 @@ body.lb-open{overflow:hidden}
       <details><summary>Hoe komen we er met de trein?</summary><p>Neem de trein naar station Aime-La Plagne in het dal en ga daarna met de pendelbus of taxi naar het skidorp.</p></details>
       <details><summary>Hebben we ter plaatse een auto nodig?</summary><p>Nee: in Belle Plagne is alles te voet bereikbaar. Een plek in de overdekte parkeergarage van de residentie is bij uw boeking inbegrepen. Let op: de maximale hoogte is 1,90 m (denk aan dakkoffers en busjes).</p></details>
       <details><summary>Hebben we sneeuwkettingen of winterbanden nodig?</summary><p>Ja. In de winter heeft u winterbanden of sneeuwkettingen (of sneeuwsokken) nodig om naar het skidorp te rijden.</p></details>
-      <details><summary>Wat is inbegrepen in de prijs?</summary><p>De eindschoonmaak, bedlinnen en handdoeken, de toeristenbelasting, de overdekte parkeerplaats en het verwarmde skikluisje zijn inbegrepen.</p></details>
+      <details><summary>Wat is inbegrepen in de prijs?</summary><p>De eindschoonmaak, bedlinnen en handdoeken, wifi, de overdekte parkeerplaats en het verwarmde skikluisje zijn inbegrepen. De toeristenbelasting is niet inbegrepen en wordt apart afgerekend.</p></details>
       <details><summary>Verhuurt u het appartement ook in de zomer?</summary><p>Nee, het appartement wordt alleen in het winterseizoen verhuurd.</p></details>
       <details><summary>Zijn huisdieren toegestaan?</summary><p>Nee, huisdieren zijn niet toegestaan.</p></details>
       <details><summary>Mag er gerookt of gevapet worden?</summary><p>Roken en vapen zijn niet toegestaan in het appartement, maar wel op de balkons.</p></details>
@@ -897,6 +899,7 @@ body.lb-open{overflow:hidden}
       <div class="eyebrow">Seizoen 2026-2027</div>
       <h2 class="title">Beschikbare weken</h2>
       <p class="dispo-intro">Verblijf van zaterdag tot zaterdag, van 12 december 2026 tot 24 april 2027. Klik op een vrije week om deze direct aan te vragen.</p>
+      <p class="dispo-price"><strong>Prijzen: van € 1.700 tot € 3.600 per week</strong>, afhankelijk van de periode, alles inbegrepen (schoonmaak, bed- en badlinnen, wifi en overdekte parkeerplaats).</p>
       <div class="dispo-legend"><span class="ok"><i class="ic ok"><svg viewBox="0 0 20 20"><path d="m4 10.5 4 4 8-9"/></svg></i>Beschikbaar</span><span class="ko"><i class="ic ko"><svg viewBox="0 0 20 20"><path d="m5.5 5.5 9 9m0-9-9 9"/></svg></i>Bezet</span></div>
     </div>
     <div id="dispoGrid"></div>
